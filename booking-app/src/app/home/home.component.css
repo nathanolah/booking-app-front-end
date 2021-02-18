@@ -26,19 +26,46 @@ html {
     margin: 40px 8px 10px 8px; 
     color: #cccccc;
   }
+
+  /* Box Structure */
+  #content {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 100px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+  }
   
   
-  
+
+
+
   /* STRUCTURE */
+  .title {
+      text-align: center;
+      padding: 20px;
+  }
+
+  .container {
+    /* padding: 170px */
+  }
+
   
   .wrapper {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    align-items: left;
     flex-direction: column; 
     justify-content: center;
     width: 100%;
     min-height: 100%;
-    padding: 20px;
+    padding: 100px;
   }
   
   #formContent {

@@ -30,7 +30,10 @@ html {
   
   
   /* STRUCTURE */
-  
+  .container {
+    padding: 125px;
+  }
+
   .wrapper {
     display: flex;
     align-items: center;
@@ -40,7 +43,7 @@ html {
     min-height: 100%;
     padding: 20px;
   }
-  
+
   #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
