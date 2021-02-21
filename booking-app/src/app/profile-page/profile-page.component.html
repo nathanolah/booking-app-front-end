@@ -1,50 +1,55 @@
 <div class="container">
-    <div class="title">
-            <div class="card">
-                <div class="card-body" style="padding: 30px">
+    <div class="main-body">    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">                    
+                    <div class="mt-3">
+                      <h4>First Name</h4>
+                      <p class="text-secondary mb-1">Job Role (Barber or Manager)</p>
+                      <p class="text-muted font-size-sm">Barber shop location</p>
 
-                    <div class="row">
-                        <div class="col-sm">
-                            <h3>Profile Name</h3>
-                            <a href="/shop-profile" class="text-decoration-none">Barber Shop</a>
-                            <p>Profile Information</p>
-                        </div>
-                        <div class="col-sm">
-                            <img src="https://image.shutterstock.com/image-photo/barber-shop-pole-background-concept-600w-1129845197.jpg" class="img-thumbnail" alt="Profile image">
-                        </div>
+                      <a routerLink="/reviews-list" class="btn btn-outline-primary">View Reviews</a>   
+                      <button class="btn btn-outline-primary">Book an Appointment</button>                    
                     </div>
-
-                    <!-- Photo slides -->
-                    <div class="row" style="padding: 40px;">
-                        <div class="col-sm">
-                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                  <div class="carousel-item active">
-                                    <img src="https://image.shutterstock.com/image-photo/barber-shop-pole-background-concept-600w-1129845197.jpg" class="d-block w-100" alt="...">
-                                  </div>
-                                  <div class="carousel-item">
-                                    <img src="https://www.shutterstock.com/image-photo/vintage-barber-shop-tools-on-wood-316155659" class="d-block w-100" alt="...">
-                                  </div>
-                                  <div class="carousel-item">
-                                    <img src="https://www.shutterstock.com/image-photo/vintage-barber-shop-tools-on-wood-316155659" class="d-block w-100" alt="...">
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <p>Book an Appointment</p>
-                        </div>
-                        <div class="col">
-                            <p>Appointment Schedule</p>
-                        </div>
-                    </div>
-
-                <div>
+                  </div>
+                </div>
+              </div>              
             </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      First And Last Name
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      name@barbershop.com
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Phone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      123 456 7890
+                    </div>
+                  </div>
+                                  
+                </div>
+              </div>              
+            </div>
+          </div>
         </div>
     </div>
-
-</div>

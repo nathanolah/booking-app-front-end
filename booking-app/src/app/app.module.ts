@@ -13,6 +13,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { ShopProfileComponent } from './shop-profile/shop-profile.component';
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
+import { ReviewsListComponent } from './reviews-list/reviews-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BarberProfileComponent } from './barber-profile/barber-profile.componen
     ProfilePageComponent,
     AccountSettingsComponent,
     ShopProfileComponent,
-    BarberProfileComponent
+    BarberProfileComponent,
+    ReviewsListComponent
   ],
   imports: [
     BrowserModule,
