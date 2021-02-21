@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { ShopProfileComponent } from './shop-profile/shop-profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { RegisterComponent } from './register/register.component';
     HomeComponent,
     PageNotFoundComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfilePageComponent,
+    AccountSettingsComponent,
+    ShopProfileComponent
   ],
   imports: [
     BrowserModule,
