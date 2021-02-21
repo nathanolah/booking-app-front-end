@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { ShopProfileComponent } from './shop-profile/shop-profile.component';
+import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ShopProfileComponent } from './shop-profile/shop-profile.component';
     RegisterComponent,
     ProfilePageComponent,
     AccountSettingsComponent,
-    ShopProfileComponent
+    ShopProfileComponent,
+    BarberProfileComponent
   ],
   imports: [
     BrowserModule,
