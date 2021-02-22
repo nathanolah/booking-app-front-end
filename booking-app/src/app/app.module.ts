@@ -18,6 +18,7 @@ import { NewReviewComponent } from './new-review/new-review.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 import { ReviewListComponent } from './review-list/review-list.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ReviewListComponent } from './review-list/review-list.component';
     NewReviewComponent,
     AppointmentFormComponent,
     BarberProfileComponent,
-    ReviewListComponent
+    ReviewListComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

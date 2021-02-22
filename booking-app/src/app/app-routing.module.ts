@@ -13,11 +13,12 @@ import { NewReviewComponent } from './new-review/new-review.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {path: "signup", component: SignupComponent},
   {path: "book", component: BookComponent},
- 
+  {path: "about", component: AboutComponent},
   {path: "barlist", component: BarberListComponent},
   {path: "home", component: HomeComponent},
   {path: "login", component: LoginComponent },
