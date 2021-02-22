@@ -9,6 +9,7 @@ import { ShopProfileComponent } from './shop-profile/shop-profile.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ReviewsListComponent } from './reviews-list/reviews-list.component';
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
+import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'shop-profile', component: ShopProfileComponent },
   { path: 'profile-page', component: ProfilePageComponent },
   { path: 'reviews-list', component: ReviewsListComponent },
-  { path: 'barber-profile', component: BarberProfileComponent }, 
+  { path: 'barber-profile', component: BarberProfileComponent },
+  { path: 'appointment-form', component: AppointmentFormComponent }, 
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }
 

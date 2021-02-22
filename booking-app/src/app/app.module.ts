@@ -14,6 +14,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { ShopProfileComponent } from './shop-profile/shop-profile.component';
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 import { ReviewsListComponent } from './reviews-list/reviews-list.component';
+import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReviewsListComponent } from './reviews-list/reviews-list.component';
     AccountSettingsComponent,
     ShopProfileComponent,
     BarberProfileComponent,
-    ReviewsListComponent
+    ReviewsListComponent,
+    AppointmentFormComponent
   ],
   imports: [
     BrowserModule,
