@@ -15,6 +15,7 @@ import { ShopProfileComponent } from './shop-profile/shop-profile.component';
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 import { ReviewsListComponent } from './reviews-list/reviews-list.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AppointmentFormComponent } from './appointment-form/appointment-form.co
     ShopProfileComponent,
     BarberProfileComponent,
     ReviewsListComponent,
-    AppointmentFormComponent
+    AppointmentFormComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
