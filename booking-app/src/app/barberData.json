@@ -1,0 +1,98 @@
+[
+    {
+        "_id": 
+            "60217e8758ed974ab4d54d8a"
+    ,
+        
+        "schedules": [
+            {
+                "_id": "60217fc658ed974ab4d54d8e",
+                "workDate": "2021 Mar 3",
+                "startTime": "08:00",
+                "endTime":"17:00"
+            }
+        ],
+        "reviews": [
+            {
+                "_id": "60217edc58ed974ab4d54d8b",
+                "rating": 4,
+                "comment": "good"
+
+            }
+           
+        ],
+        "firstName": "John",
+        "lastName": "Smith",
+        "email": "JS22@eemail.com",
+        "phoneNumber": "6473443212"
+    
+    },
+    {
+        "_id": "60217e8758ed974ab4d54d8b",
+        
+       
+        "schedules": [
+            {
+                "_id": "60217fc658ed974ab4d54d8e",
+                "workDate": "2021 Mar 4",
+                "startTime": "09:00",
+                "endTime":"14:00"
+            }
+           
+        ],
+        "reviews": [
+            {
+                "_id": "60217edc58ed974ab4d54d8b",
+                "rating": 5,
+                "comment": "awesome"
+            },
+            {
+                "_id": "60217f3558ed974ab4d54d8c",
+                "rating": 3.5,
+                "comment": "None"
+            }
+        ],
+        "firstName": "Kane",
+        "lastName": "Michael",
+        "email": "KKKKKANE@hotmail.com",
+        "phoneNumber": "6471236666"
+        
+    },
+    {
+        "_id": 
+             "60217e8758ed974ab4d54d8e"
+        ,
+        
+        "schedules": [
+            {
+                "_id": "60217fc658ed974ab4d54d8e",
+                "workDate": "2021 Mar 2",
+                "startTime": "09:00",
+                "endTime":"15:00"
+            },
+            {
+                "_id": "602181cd7fa9b963a4e64245",
+                "workDate": "2021 Mar 4",
+                "startTime": "11:00",
+                "endTime":"16:00"
+            }
+        ],
+        "reviews": [
+            {
+                "_id": "60217edc58ed974ab4d54d8b",
+                "rating": 4,
+                "comment": "good"
+            },
+            {
+                "_id": "60217f3558ed974ab4d54d8c",
+                "rating": 1,
+                "comment": "poor skill"
+            }
+        ],
+        "firstName": "Sam",
+        "lastName": "Wilson",
+        "email": "willingson@dddmail.com",
+        "phoneNumber": "6474619595"
+       
+    }
+]
