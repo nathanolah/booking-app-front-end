@@ -15,6 +15,7 @@ import { BarberProfileComponent } from './barber-profile/barber-profile.componen
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 import { AboutComponent } from './about/about.component';
 
+
 const routes: Routes = [
   {path: "signup", component: SignupComponent},
   {path: "book", component: BookComponent},
@@ -31,10 +32,13 @@ const routes: Routes = [
   {path: "appointment-form", component:AppointmentFormComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

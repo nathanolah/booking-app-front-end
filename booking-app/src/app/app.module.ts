@@ -23,6 +23,7 @@ import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
+
     BookComponent,
     SignupComponent,
     HeaderComponent,
@@ -39,6 +40,7 @@ import { AboutComponent } from './about/about.component';
     BarberProfileComponent,
     ReviewListComponent,
     AboutComponent
+
   ],
   imports: [
     BrowserModule,

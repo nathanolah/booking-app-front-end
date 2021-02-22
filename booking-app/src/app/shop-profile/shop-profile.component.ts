@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Barber } from '../barber'
-import barberData from '../barberData.json'
+
 
 @Component({
   selector: 'app-shop-profile',
@@ -9,7 +8,7 @@ import barberData from '../barberData.json'
 })
 export class ShopProfileComponent implements OnInit {
 
-  barbers: Array<Barber> = barberData;
+
   constructor() { }
 
   ngOnInit(): void {
