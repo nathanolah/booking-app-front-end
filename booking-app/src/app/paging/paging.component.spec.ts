@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BarberProfileComponent } from './barber-profile.component';
+import { PagingComponent } from './paging.component';
 
-describe('BarberProfileComponent', () => {
-  let component: BarberProfileComponent;
-  let fixture: ComponentFixture<BarberProfileComponent>;
+describe('PagingComponent', () => {
+  let component: PagingComponent;
+  let fixture: ComponentFixture<PagingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BarberProfileComponent ]
+      declarations: [ PagingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BarberProfileComponent);
+    fixture = TestBed.createComponent(PagingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

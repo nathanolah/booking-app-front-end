@@ -13,10 +13,10 @@ import { RegisterComponent } from './register/register.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { ShopProfileComponent } from './shop-profile/shop-profile.component';
-import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 import { ReviewsListComponent } from './reviews-list/reviews-list.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 import { ReviewComponent } from './review/review.component';
+import { PagingComponent } from './paging/paging.component';
 
 @NgModule({
   declarations: [
@@ -30,10 +30,10 @@ import { ReviewComponent } from './review/review.component';
     ProfilePageComponent,
     AccountSettingsComponent,
     ShopProfileComponent,
-    BarberProfileComponent,
     ReviewsListComponent,
     AppointmentFormComponent,
-    ReviewComponent
+    ReviewComponent,
+    PagingComponent
   ],
   imports: [
     BrowserModule,
