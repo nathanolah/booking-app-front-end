@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="title">
+        <strong>List of Customers</strong>
+    </div>
+     <div class="row">
+        <div class="col">
+            <div class="wrapper">
+                <div class="list-group">
+                  
+                  
+                    <a [routerLink]="['/customer', cust._id]" class="list-group-item list-group-item-action active" *ngFor="let cust of customers"  aria-current="true">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"></h5>
+                        <small>{{ cust.email }}</small>
+                      </div>
+                      <p class="mb-1">{{ cust.firstName }} {{ cust.lastName }}</p>
+                      <small>{{ cust.phoneNumber }}</small>
+                    </a>
+                    
+                  </div>
+            </div>
+            
+
+        </div>
+       
+
+    </div>
+</div>
