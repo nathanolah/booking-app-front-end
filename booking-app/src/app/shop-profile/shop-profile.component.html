@@ -46,15 +46,11 @@
     </div>
     <div class="row">
         <div class="col">
-          <div class="group" *ngIf="barberShop">
-            <div class="list-group" *ngFor="let barber of barberShop.barbers">
-                <a [routerLink]="['/profile-page', barber]" class="list-group-item list-group-item-action active" aria-current="true">{{ barber }}</a>
-
-                
-                <!-- <a href="/profile-page" class="list-group-item list-group-item-action">Barber Two</a>
-                <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-                <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-                <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">A disabled link item</a> -->
+          <div class="group">
+            <div *ngIf="barbers">
+              <div class="list-group" *ngFor="let barber of barbers">
+                  <a [routerLink]="['/profile-page', barber._id]" class="list-group-item list-group-item-action active" aria-current="true">{{ barber.firstName }} {{ barber.lastName }}</a>
+              </div>
             </div>
           </div>
 
@@ -74,36 +70,50 @@
     <div class="title">
         <strong>Waiting List</strong>
     </div>
+
     <!-- Queue -->
     <div class="row">
         <div class="col">
-            <form class="row g-3">
+
+
+            <form class="row g-3" #f="ngForm" (ngSubmit)="enterQueue()">
+
                 <div class="col-md-4">
                   <label for="validationServer01" class="form-label">First name</label>
-                  <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
-                  <div class="valid-feedback">
+                  <input type="text" class="form-control" name="firstName" id="firstName" [(ngModel)]="queueFirstName" required autofocus #firstName="ngModel">
+
+                  <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
+
+                  <!-- <div class="valid-feedback">
                     Looks good!
-                  </div>
+                  </div> -->
+
                 </div>
+
                 <div class="col-md-4">
                   <label for="validationServer02" class="form-label">Last name</label>
-                  <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
-                  <div class="valid-feedback">
+                  <input type="text" class="form-control" name="lastName" id="lastName" [(ngModel)]="queueLastName" required autofocus #lastname="ngModel">
+
+                  <!-- <div class="valid-feedback">
                     Looks good!
-                  </div>
+                  </div> -->
                 </div>
+
                 <div class="col-md-4">
                   <label for="validationServerUsername" class="form-label">Email</label>
+
                   <div class="input-group has-validation">
-                    <!-- <span class="input-group-text" id="inputGroupPrepend3">@</span> -->
-                    <input type="email" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
-                    <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    <input type="email" class="form-control" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                    
+                    <!-- <div id="validationServerUsernameFeedback" class="invalid-feedback">
                       Please enter an email.
-                    </div>
+                    </div> -->
+
                   </div>
                 </div>
+
                 <br>
-                <div class="col-12">
+                <!-- <div class="col-12">
                   <div class="form-check">
                     <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
                     <label class="form-check-label" for="invalidCheck3">
@@ -113,17 +123,22 @@
                       You must agree before submitting.
                     </div>
                   </div>
-                </div>
+                </div> -->
+
                 <div class="col-md">
                     <br>
                   <button class="btn btn-primary" type="submit">Join Queue</button>
                 </div>
+
                 <div class="col-md">
                     <br>
                     <button class="btn btn-primary" type="submit">Leave Queue</button>
-                  </div>
+                </div>
+
               </form>
         </div>
+
+
         <div class="col">
             <table class="table table-striped">
                 <thead>
@@ -136,26 +151,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>marko@email.com</td>
-                    <td>In Session</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>jt@email.com</td>
-                    <td>Waiting</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>larry@email.com</td>
-                    <td>Waiting</td>
-                    </tr>
+                  <tr *ngFor="let cust of queueList">
+                  <th scope="row">1</th>
+                  <td>{{ cust.firstName }}</td>
+                  <td>{{ cust.lastName }}</td>
+                  <td>{{ cust.email }}</td>
+                  <td>In Session</td>
+                  </tr>
                 </tbody>
             </table>    
         </div>

@@ -1,8 +1,7 @@
-export class Account {
+export class Customer {
     _id: string = "";
-    dateCreated: string = "";
     firstName: string = "";
     lastName: string = "";
-    password: string = "";
     email: string = "";
+    phoneNumber: string = "";
 }
