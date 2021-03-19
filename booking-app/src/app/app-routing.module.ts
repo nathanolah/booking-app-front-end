@@ -12,6 +12,8 @@ import { BarberProfileComponent } from './barber-profile/barber-profile.componen
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 import { CustomersComponent } from './customers/customers.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'appointment-form', component: AppointmentFormComponent }, 
   { path: 'customer/:id', component: CustomersComponent },
   { path: 'customers-list', component: CustomersListComponent},
+  { path: 'appointment-list', component: AppointmentListComponent},
+  { path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }
 

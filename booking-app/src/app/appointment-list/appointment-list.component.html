@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="title">
+        <strong>List of Appointments</strong>
+    </div>
+     <div class="row">
+        <div class="col">
+            <div class="wrapper">
+                <div class="list-group">
+                  
+                  
+                    <a [routerLink]="'/customer'" class="list-group-item list-group-item-action active" *ngFor="let apt of appointments"  aria-current="true">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"></h5>
+                        <small>Barber Name Here</small>
+                      </div>
+                      <p class="mb-1">Customer: {{ apt.custID.firstName }} {{ apt.custID.lastName }}</p>
+                      <small>Date/Time: {{apt.startDate}} {{apt.endDate}}</small>
+                    </a>
+                    
+                  </div>
+            </div>
+            
+
+        </div>      
+
+    </div>
+</div>

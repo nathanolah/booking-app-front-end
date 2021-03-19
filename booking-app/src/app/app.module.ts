@@ -19,6 +19,8 @@ import { AppointmentFormComponent } from './appointment-form/appointment-form.co
 import { ReviewComponent } from './review/review.component';
 import { CustomersComponent } from './customers/customers.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { CustomersListComponent } from './customers-list/customers-list.componen
     AppointmentFormComponent,
     ReviewComponent,
     CustomersComponent,
-    CustomersListComponent
+    CustomersListComponent,
+    AppointmentListComponent,
+    AppointmentByBarberComponent
   ],
   imports: [
     BrowserModule,

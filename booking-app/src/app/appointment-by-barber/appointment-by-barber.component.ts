@@ -4,11 +4,11 @@ import { AppointmentService } from '../Services/appointment.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-appointment-form',
-  templateUrl: './appointment-form.component.html',
-  styleUrls: ['./appointment-form.component.css']
+  selector: 'app-appointment-by-barber',
+  templateUrl: './appointment-by-barber.component.html',
+  styleUrls: ['./appointment-by-barber.component.css']
 })
-export class AppointmentFormComponent implements OnInit {
+export class AppointmentByBarberComponent implements OnInit {
 
   appointments: Array<Appointment> | undefined;
   querySub: any;
@@ -23,4 +23,6 @@ export class AppointmentFormComponent implements OnInit {
 
   })
 })
-}}
+}
+
+}
