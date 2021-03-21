@@ -10,17 +10,31 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AppointmentFormComponent implements OnInit {
 
-  appointments: Array<Appointment> | undefined;
+  
   querySub: any;
+  email: string = "";
+  day: string = "";
+  month: string ="";
+  year: string = "";
+  time: string = "";
+  fullDate: string ="";
+  
 
-  constructor(private data: AppointmentService, private route: ActivatedRoute) {}
+  constructor(private data: AppointmentService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.querySub = this.route.params.subscribe(params => {
-      this.data.getBarberAppointments(params['id']).subscribe(data => {        
-        
-          this.appointments = data;         
+    
+ }
 
-  })
-})
-}}
+ public onSubmit():void{
+  console.log(this.email + " " + this.day + " " + this.month + " " + this.year + " " + this.time);
+  this.fullDate = this.year + " " + this.month + " " + this.day + " " + this.time;
+
+  this.querySub = this.route.params.subscribe(params => {
+  this.data.bookAppointment(this.email, params['id'], this.fullDate).subscribe(() =>{
+    this.router.navigate([`home/`]);
+  });
+});  
+
+ }
+}

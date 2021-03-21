@@ -15,6 +15,8 @@ import { CustomersListComponent } from './customers-list/customers-list.componen
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
 
+
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -23,7 +25,7 @@ const routes: Routes = [
   { path: 'profile-page', component: ProfilePageComponent },
   { path: 'reviews-list', component: ReviewsListComponent },
   { path: 'barber-profile', component: BarberProfileComponent },
-  { path: 'appointment-form', component: AppointmentFormComponent }, 
+  { path: 'appointment-form/:id', component: AppointmentFormComponent }, 
   { path: 'customer/:id', component: CustomersComponent },
   { path: 'customers-list', component: CustomersListComponent},
   { path: 'appointment-list', component: AppointmentListComponent},
