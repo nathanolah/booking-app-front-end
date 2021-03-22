@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AppointmentListComponent implements OnInit {
 
   appointments: Array<Appointment> | undefined;
+  
 
   constructor(private data: AppointmentService, private route: ActivatedRoute) {}
 
