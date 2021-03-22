@@ -30,9 +30,6 @@ export class ShopProfileComponent implements OnInit {
 
   page: number = 1;
 
-
-
-
   // listFirstName: string = "";
   // listLastName: string = "";
   // listEmail: string = "";
