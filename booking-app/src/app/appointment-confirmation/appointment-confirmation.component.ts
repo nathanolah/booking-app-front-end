@@ -5,22 +5,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Barber } from '../models/Barber';
 
 @Component({
-  selector: 'app-appointment-form',
-  templateUrl: './appointment-form.component.html',
-  styleUrls: ['./appointment-form.component.css']
+  selector: 'app-appointment-confirmation',
+  templateUrl: './appointment-confirmation.component.html',
+  styleUrls: ['./appointment-confirmation.component.css']
 })
-export class AppointmentFormComponent implements OnInit {
+export class AppointmentConfirmationComponent implements OnInit {
 
   barber: Barber = new Barber();
   querySub: any;
-  email: string = "";
-  day: string = "";
-  month: string ="";
-  year: string = "";
-  time: string = "";
-  fullDate: string ="";
-  
-
   constructor(private data: AppointmentService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
@@ -34,17 +26,4 @@ export class AppointmentFormComponent implements OnInit {
   })
 })
 
- }
-
- public onSubmit():void{
-  
-  this.fullDate = this.year + " " + this.month + " " + this.day + " " + this.time;
-  
-  this.querySub = this.route.params.subscribe(params => {
-  this.data.bookAppointment(this.email, params['id'], this.fullDate).subscribe(() =>{
-    this.router.navigate([`/appointment-confirmation/${params['id']}`])
-  });
-});  
-
- }
-}
+  }}

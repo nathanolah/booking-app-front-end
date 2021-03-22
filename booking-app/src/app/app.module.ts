@@ -25,6 +25,7 @@ import { CustomersListComponent } from './customers-list/customers-list.componen
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
+import { AppointmentConfirmationComponent } from './appointment-confirmation/appointment-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { BarberProfileComponent } from './barber-profile/barber-profile.componen
     CustomersListComponent,
     AppointmentListComponent,
     AppointmentByBarberComponent,
-    BarberProfileComponent
+    BarberProfileComponent,
+    AppointmentConfirmationComponent
   ],
   imports: [    
     BrowserModule,
