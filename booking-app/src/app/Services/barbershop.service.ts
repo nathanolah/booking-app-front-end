@@ -30,11 +30,14 @@ export class BarbershopService {
     return this.http.get<Array<Barber>>(`https://groupone-booking-app.herokuapp.com/api/barberShops/barbers/${id}`);
   }
 
+  /** Barber Shop Waiting List **/
 
   // Get waiting list
-  getQueueList(id: any): Observable<Array<Customer>> {
-    return this.http.get<Array<Customer>>(`https://groupone-booking-app.herokuapp.com/api/barberShops/queue/${id}`);
+  getQueueList(id: any, page: any): Observable<Array<Customer>> {
+    return this.http.get<Array<Customer>>(`https://groupone-booking-app.herokuapp.com/api/barberShops/queue/${id}?page=${page}&perPage=${6}`);
   }
+
+
 
   // Add to waiting list
   addToQueue(id: string, data: Customer): Observable<any> {
@@ -42,7 +45,9 @@ export class BarbershopService {
   }
 
   // Remove from waiting list
-
+  removeFromQueue(id: string, data: Customer): Observable<any> {
+    return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/barberShops/queue/${id}`, data);
+  }
 
 
 }

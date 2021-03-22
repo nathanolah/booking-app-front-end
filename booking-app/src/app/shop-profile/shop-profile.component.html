@@ -74,9 +74,7 @@
     <!-- Queue -->
     <div class="row">
         <div class="col">
-
-
-            <form class="row g-3" #f="ngForm" (ngSubmit)="enterQueue()">
+            <form class="row g-3" #f="ngForm" (ngSubmit)="onSubmit()">
 
                 <div class="col-md-4">
                   <label for="validationServer01" class="form-label">First name</label>
@@ -101,9 +99,9 @@
 
                 <div class="col-md-4">
                   <label for="validationServerUsername" class="form-label">Email</label>
-
                   <div class="input-group has-validation">
-                    <input type="email" class="form-control" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+
+                    <input type="email" class="form-control" name="email" id="email" [(ngModel)]="queueEmail" required autofocus #email="ngModel">
                     
                     <!-- <div id="validationServerUsernameFeedback" class="invalid-feedback">
                       Please enter an email.
@@ -126,13 +124,13 @@
                 </div> -->
 
                 <div class="col-md">
-                    <br>
-                  <button class="btn btn-primary" type="submit">Join Queue</button>
+                  <br>
+                  <button class="btn btn-primary" type="submit" (click)="onEnterClick()">Join Queue</button>
                 </div>
 
                 <div class="col-md">
-                    <br>
-                    <button class="btn btn-primary" type="submit">Leave Queue</button>
+                  <br>
+                  <button class="btn btn-primary" (click)="onLeaveClick()">Leave Queue</button>
                 </div>
 
               </form>
@@ -151,15 +149,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let cust of queueList">
-                  <th scope="row">1</th>
+                  <tr *ngFor="let cust of queueList; let i = index;">
+                  <th scope="row">{{ i + 1 }}</th>
                   <td>{{ cust.firstName }}</td>
                   <td>{{ cust.lastName }}</td>
                   <td>{{ cust.email }}</td>
-                  <td>In Session</td>
+                  <td>Waiting</td>
                   </tr>
                 </tbody>
-            </table>    
+            </table> 
+            <app-paging></app-paging>   
         </div>
     </div>
     <br>
