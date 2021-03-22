@@ -9,6 +9,13 @@ import { ShopProfileComponent } from './shop-profile/shop-profile.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ReviewsListComponent } from './reviews-list/reviews-list.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
+import { CustomersComponent } from './customers/customers.component';
+import { CustomersListComponent } from './customers-list/customers-list.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
+import { BarberProfileComponent } from './barber-profile/barber-profile.component'
+
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,7 +24,12 @@ const routes: Routes = [
   { path: 'shop-profile/:id', component: ShopProfileComponent },
   { path: 'profile-page/:id', component: ProfilePageComponent },
   { path: 'reviews-list', component: ReviewsListComponent },
-  { path: 'appointment-form', component: AppointmentFormComponent }, 
+  { path: 'barber-profile/:id', component: BarberProfileComponent },
+  { path: 'appointment-form/:id', component: AppointmentFormComponent }, 
+  { path: 'customer/:id', component: CustomersComponent },
+  { path: 'customers-list', component: CustomersListComponent},
+  { path: 'appointment-list', component: AppointmentListComponent},
+  { path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }
 
