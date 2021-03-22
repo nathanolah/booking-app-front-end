@@ -49,7 +49,7 @@
           <div class="group">
             <div *ngIf="barbers">
               <div class="list-group" *ngFor="let barber of barbers">
-                  <a [routerLink]="['/profile-page', barber._id]" class="list-group-item list-group-item-action active" aria-current="true">{{ barber.firstName }} {{ barber.lastName }}</a>
+                  <a [routerLink]="['/barber-profile', barber._id]" class="list-group-item list-group-item-action active" aria-current="true">{{ barber.firstName }} {{ barber.lastName }}</a>
               </div>
             </div>
           </div>

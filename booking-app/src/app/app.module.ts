@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,6 +24,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
+import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +41,14 @@ import { AppointmentByBarberComponent } from './appointment-by-barber/appointmen
     ReviewsListComponent,
     AppointmentFormComponent,
     ReviewComponent,
-    PagingComponent
+    PagingComponent,
     CustomersComponent,
     CustomersListComponent,
     AppointmentListComponent,
-    AppointmentByBarberComponent
+    AppointmentByBarberComponent,
+    BarberProfileComponent
   ],
-  imports: [
+  imports: [    
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

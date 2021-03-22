@@ -1,9 +1,9 @@
-export interface Customer {
-    dateCreated: Date;
-    _id: string;    
-    firstName: string;
-    lastName: string;
-    email: string;
-    phoneNumber: string;
+export class Customer {
+    dateCreated: Date | undefined;
+    _id: string = "";    
+    firstName: string = "";
+    lastName: string = "";
+    email: string = "";
+    phoneNumber: string = "";
     
 }

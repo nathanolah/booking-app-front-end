@@ -13,6 +13,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
+import { BarberProfileComponent } from './barber-profile/barber-profile.component'
 
 
 
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'shop-profile', component: ShopProfileComponent },
+  { path: 'shop-profile/:id', component: ShopProfileComponent },
   { path: 'profile-page/:id', component: ProfilePageComponent },
   { path: 'reviews-list', component: ReviewsListComponent },
   { path: 'barber-profile/:id', component: BarberProfileComponent },
