@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,6 +19,10 @@ import { ReviewsListComponent } from './reviews-list/reviews-list.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 import { ReviewComponent } from './review/review.component';
 import { PagingComponent } from './paging/paging.component';
+import { CustomersComponent } from './customers/customers.component';
+import { CustomersListComponent } from './customers-list/customers-list.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,10 @@ import { PagingComponent } from './paging/paging.component';
     AppointmentFormComponent,
     ReviewComponent,
     PagingComponent
+    CustomersComponent,
+    CustomersListComponent,
+    AppointmentListComponent,
+    AppointmentByBarberComponent
   ],
   imports: [
     BrowserModule,
