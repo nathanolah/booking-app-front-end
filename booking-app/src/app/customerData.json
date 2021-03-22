@@ -1,0 +1,17 @@
+{
+    "_id": {
+        "$oid": "6020848beb6df043081db289"
+    },
+    "dateCreated": {
+        "$date": {
+            "$numberLong": "1612737355193"
+        }
+    },
+    "firstName": "Scott",
+    "lastName": "Jones",
+    "email": "fakeemail32@yahoo.com",
+    "phoneNumber": "1234567890",
+    "__v": {
+        "$numberInt": "0"
+    }
+}
