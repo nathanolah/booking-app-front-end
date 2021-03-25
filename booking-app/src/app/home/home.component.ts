@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data } from '@angular/router';
-import { BarbershopService } from '../Services/barbershop.service';
-import { BarberShop } from '../models/BarberShop';
+import { Router } from '@angular/router';
+import { BarberShop } from '../BarberShop';
+import { BookingServiceService } from '../booking-service.service';
 
 @Component({
   selector: 'app-home',
@@ -9,39 +9,18 @@ import { BarberShop } from '../models/BarberShop';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  barberShops: Array<BarberShop> | undefined;
-  page: number = 1;
-  querySub: any;
 
-  constructor(private data: BarbershopService, private route: ActivatedRoute) {}
+  shops: Array<BarberShop>;
+
+  constructor(private book:BookingServiceService, private router:Router) { }
 
   ngOnInit(): void {
-    
-    this.querySub = this.route.queryParams.subscribe(params => {
-      this.getPage(+params['page'] || 1);
-    })
-
-    // this.data.getAllBarberShops().subscribe(data => {
-    //   this.barberShops = data;
-    // });
-
+    this.book.getBarberShops().subscribe(data=>{this.shops=data});
   }
 
-  getPage(num: any) {
-    this.data.getBarberShops(num).subscribe(data => {
-      if (data.length > 0) {
-        this.barberShops = data;
-        this.page = num;
-      }
-    });
-
+  rowClicked(e,id)
+  {
+    this.router.navigate(["/shopProfile", id])
   }
-
-  ngOnDestroy() {
-    if (this.querySub) {
-      this.querySub.unsubscribe();
-    }
-  }
-
 
 }
