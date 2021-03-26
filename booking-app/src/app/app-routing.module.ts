@@ -18,6 +18,7 @@ import {GuardAuthService} from './guard-auth.service'
 import { LoginBarberComponent } from './login-barber/login-barber.component';
 import { AddBarberComponent } from './add-barber/add-barber.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
+import { AppointmentConfirmationComponent } from './appointment-confirmation/appointment-confirmation.component'
 const routes: Routes = [
   {path: "signup", component: SignupComponent},
   {path: "book", component: BookComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path: "newReview/:id", component:NewReviewComponent, canActivate:[GuardAuthService]},
   {path: "reviews-list", component:ReviewListComponent, canActivate:[GuardAuthService]},
   {path: "barProf/:id", component:BarberProfileComponent},
-  {path: "appointment-form", component:AppointmentFormComponent},
+  {path: "appointment-form/:id", component:AppointmentFormComponent},
+  { path: 'appointment-confirmation/:id', component: AppointmentConfirmationComponent},
   {path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardAuthService]},
   {path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
   {path: '', redirectTo: '/home', pathMatch: 'full'},

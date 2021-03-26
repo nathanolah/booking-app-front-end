@@ -11,7 +11,7 @@
                       
 
                       <div (click)="clicked($event, barber._id)" class="btn btn-outline-primary">new Review</div>   
-                      <button class="btn btn-outline-primary">Book an Appointment</button>                    
+                      <a [routerLink]="['/appointment-form', barber._id]" class="btn btn-outline-primary">Book an Appointment</a>                       
                     </div>
                   </div>
                 </div>
