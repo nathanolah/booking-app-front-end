@@ -26,6 +26,7 @@ import { InterceptTokenService } from './intercept-token.service';
 import { LoginBarberComponent } from './login-barber/login-barber.component';
 import { AddBarberComponent } from './add-barber/add-barber.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 
 
 
@@ -55,7 +56,8 @@ export function tokenGetter() {
     AboutComponent,
     LoginBarberComponent,
     AddBarberComponent,
-    EditScheduleComponent
+    EditScheduleComponent,
+    AppointmentListComponent
   ],
   imports: [
     HttpClientModule,

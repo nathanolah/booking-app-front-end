@@ -13,6 +13,7 @@ import { NewReviewComponent } from './new-review/new-review.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AboutComponent } from './about/about.component';
 import {GuardAuthService} from './guard-auth.service'
 import { LoginBarberComponent } from './login-barber/login-barber.component';
@@ -32,11 +33,13 @@ const routes: Routes = [
   {path: "profile-page", component: ProfilePageComponent},
   {path: "newReview/:id", component:NewReviewComponent, canActivate:[GuardAuthService]},
   {path: "reviews-list", component:ReviewListComponent, canActivate:[GuardAuthService]},
+  { path: 'appointment-list', component: AppointmentListComponent},
   {path: "barProf/:id", component:BarberProfileComponent},
   {path: "appointment-form/:id", component:AppointmentFormComponent},
   { path: 'appointment-confirmation/:id', component: AppointmentConfirmationComponent},
   {path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardAuthService]},
   {path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
+  
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent }
 ];
