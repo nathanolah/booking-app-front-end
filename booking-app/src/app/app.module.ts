@@ -22,18 +22,16 @@ import { AboutComponent } from './about/about.component';
 import { FormsModule } from "@angular/forms";
 import { JwtModule } from "@auth0/angular-jwt";
 
-
 import { InterceptTokenService } from './intercept-token.service';
 import { LoginBarberComponent } from './login-barber/login-barber.component';
 import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
 import { AddBarberComponent } from './add-barber/add-barber.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
+
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AppointmentConfirmationComponent } from './appointment-confirmation/appointment-confirmation.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { CustomersComponent } from './customers/customers.component';
-
-
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');

@@ -2,7 +2,7 @@
 import { Review } from "./Review";
 import { Schedule } from "./Schedule"
 
-export class Barber{
+export class Barber {
     _id:String;
     firstName:String;
     lastName:String;
@@ -13,12 +13,5 @@ export class Barber{
     isManager:boolean;
     schedules:Array<Schedule>;
     reviews:Array<Review>;
-    
-    
-  
-   
-
-
-
     
 }
