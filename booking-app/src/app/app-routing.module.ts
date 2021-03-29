@@ -19,7 +19,11 @@ import {GuardAuthService} from './guard-auth.service'
 import { LoginBarberComponent } from './login-barber/login-barber.component';
 import { AddBarberComponent } from './add-barber/add-barber.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
-import { AppointmentConfirmationComponent } from './appointment-confirmation/appointment-confirmation.component'
+import { AppointmentConfirmationComponent } from './appointment-confirmation/appointment-confirmation.component';
+import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
+import { CustomersListComponent } from './customers-list/customers-list.component';
+import { CustomersComponent } from './customers/customers.component';
+
 const routes: Routes = [
   {path: "signup", component: SignupComponent},
   {path: "book", component: BookComponent},
@@ -28,7 +32,9 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "login", component: LoginComponent },
   {path: "login-barber",component:LoginBarberComponent},
+  { path: 'customer/:id', component: CustomersComponent },
   {path: "register", component: RegisterComponent },
+  { path: 'customers-list', component: CustomersListComponent},
   {path: "shopProfile/:id", component: ShopProfileComponent},
   {path: "profile-page", component: ProfilePageComponent},
   {path: "newReview/:id", component:NewReviewComponent, canActivate:[GuardAuthService]},
@@ -39,6 +45,7 @@ const routes: Routes = [
   { path: 'appointment-confirmation/:id', component: AppointmentConfirmationComponent},
   {path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardAuthService]},
   {path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
+  { path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
   
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent }
