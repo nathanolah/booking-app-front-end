@@ -3,11 +3,32 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "booking-app": {
+    "bookingFront": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",
@@ -17,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/booking-app",
+            "outputPath": "dist/bookingFront",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,13 +71,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -65,18 +86,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "booking-app:build"
+            "browserTarget": "bookingFront:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "booking-app:build:production"
+              "browserTarget": "bookingFront:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "booking-app:build"
+            "browserTarget": "bookingFront:build"
           }
         },
         "test": {
@@ -113,16 +134,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "booking-app:serve"
+            "devServerTarget": "bookingFront:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "booking-app:serve:production"
+              "devServerTarget": "bookingFront:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "booking-app"
+  "defaultProject": "bookingFront"
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Barber } from '../models/Barber'
-import { ActivatedRoute, Data } from '@angular/router';
-import { AppointmentService } from '../Services/appointment.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { Barber } from '../Barber';
+import { BookingServiceService } from '../booking-service.service';
 
 @Component({
   selector: 'app-barber-profile',
@@ -9,20 +10,40 @@ import { AppointmentService } from '../Services/appointment.service';
   styleUrls: ['./barber-profile.component.css']
 })
 export class BarberProfileComponent implements OnInit {
-
-  barber: Barber = new Barber();
-  querySub: any;
-  constructor(private data: AppointmentService, private route: ActivatedRoute) { }
+  isManager:boolean;
+  barber:Barber;
+  public token:any;
+  constructor(private book:BookingServiceService,private auth:AuthService, private route:Router, private aroute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.querySub = this.route.params.subscribe(params => {
-      this.data.getOneBarber(params['id']).subscribe(data => {        
-        
-          this.barber = data;         
+    let id=this.aroute.snapshot.params['id'];
+    this.book.getBarber(id).subscribe(data=>{
+      
+      this.barber=data;
 
-  })
-})
-
+      console.log(this.barber);
+    })
+    this.token=this.auth.readToken();
+    if(this.token.role=="Manager")
+    {
+      this.isManager=true;
+    }
+  }
+  clicked(e,id)
+  {
+    this.route.navigate(["/newReview", id])
   }
 
+  updateSchedule(e,id)
+  {
+    
+    this.route.navigate(['/editSchedule', id]);
+  }
+  
+  deleteSchedule(e,id)
+  {
+    this.book.deleteSchedule(id).subscribe(res=>{
+      alert(res);
+    })
+  }
 }

@@ -1,95 +1,94 @@
 <div class="container">
-    <div class="title">
-        <strong>Available Shops</strong>
-    </div>
-     <div class="row">
-        <div class="col">
-            <div class="wrapper">
-                <div class="list-group">
-                  
-                  <div class="shops" *ngFor="let shop of barberShops">
-                    <a [routerLink]="['/shop-profile', shop._id]" class="list-group-item list-group-item-action active" aria-current="true">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">{{ shop.barberShopName }}</h5>
-                        <small>{{ shop.phoneNumber }}</small>
-                      </div>
-                      <p class="mb-1">description</p>
-                      <small>And some small print.</small>
-                    </a>
-                  </div>
-                  <div class="w-100"><app-paging (newPage)="getPage($event)" [page]="page"></app-paging></div>
-
+  <div class="title">
+      <strong>Available Shops</strong>
+  </div>
+   <div class="row">
+      <div class="col">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+          <th>Shop Name</th>
+          <th>Address</th>
+          <th>Contact</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let shop of shops" (click)="rowClicked($event, shop._id)">
+              <td>{{shop.barberShopName}}</td>
+              <td>{{shop.address}}</td>
+              <td>{{shop.phoneNumber}}</td>
+          </tr>
+          </tbody>
+          </table>
+      </div>
           
+
+      
+
+      <!-- <div class="col">
+          
+          <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">List group item heading</h5>
+                  <small>3 days ago</small>
                 </div>
+                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                <small>And some small print.</small>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">List group item heading</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                <small class="text-muted">And some muted small print.</small>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">List group item heading</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                <small class="text-muted">And some muted small print.</small>
+              </a>
             </div>
-            
+      </div> -->
 
-        </div>
-
-        <!-- <div class="col">
-            
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago</small>
-                  </div>
-                  <p class="mb-1">Some placeholder content in a paragraph.</p>
-                  <small>And some small print.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                  </div>
-                  <p class="mb-1">Some placeholder content in a paragraph.</p>
-                  <small class="text-muted">And some muted small print.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                  </div>
-                  <p class="mb-1">Some placeholder content in a paragraph.</p>
-                  <small class="text-muted">And some muted small print.</small>
-                </a>
-              </div>
-        </div> -->
-
-    </div>
+  </div>
 </div>
 
 
 
 <!-- 
 <div class="container">
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
-         
-          <div class="fadeIn first">
-            <br>
-            <strong>Home Page</strong>
-            <br><br>
-          </div>
-    
-          <div class="errorMessage">
-            
-          </div>
-
-     
-          <form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email">
-            <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password">
-            <br><br>
-            <input type="submit" class="fadeIn fourth" value="Log In">
-          </form>
-      
-          <div id="formFooter">
-              <a class="underlineHover" href="/register">Register</a>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <a class="underlineHover" href="#">Forgot Password</a>
-          </div>
-      
+  <div class="wrapper fadeInDown">
+      <div id="formContent">
+       
+        <div class="fadeIn first">
+          <br>
+          <strong>Home Page</strong>
+          <br><br>
         </div>
+  
+        <div class="errorMessage">
+          
+        </div>
+
+   
+        <form>
+          <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email">
+          <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password">
+          <br><br>
+          <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+    
+        <div id="formFooter">
+            <a class="underlineHover" href="/register">Register</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="underlineHover" href="#">Forgot Password</a>
+        </div>
+    
       </div>
+    </div>
 </div> -->

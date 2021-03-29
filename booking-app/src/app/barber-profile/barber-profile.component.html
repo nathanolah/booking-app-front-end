@@ -6,12 +6,12 @@
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">                    
                     <div class="mt-3">
-                      <h4>{{this.barber.firstName}}</h4>
+                      <h4>{{barber.firstName}} {{barber.lastName}}</h4>
                       <p class="text-secondary mb-1">Barber</p>
-                      <p class="text-muted font-size-sm">Barber shop location</p>
+                      
 
-                      <a routerLink="/reviews-list" class="btn btn-outline-primary">View Reviews</a>   
-                      <a [routerLink]="['/appointment-form', barber._id]" class="btn btn-outline-primary">Book an Appointment</a>                    
+                      <div (click)="clicked($event, barber._id)" class="btn btn-outline-primary">new Review</div>   
+                      <a [routerLink]="['/appointment-form', barber._id]" class="btn btn-outline-primary">Book an Appointment</a>                       
                     </div>
                   </div>
                 </div>
@@ -25,7 +25,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      {{this.barber.firstName}} {{this.barber.lastName}}
+                      {{barber.firstName}} {{barber.lastName}}
                     </div>
                   </div>
                   <hr>
@@ -34,7 +34,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      {{this.barber.email}}
+                      {{barber.email}}
                     </div>
                   </div>
                   <hr>
@@ -43,12 +43,53 @@
                       <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      {{this.barber.phoneNumber}}
+                      {{barber.phoneNumber}}
                     </div>
                   </div>
                                   
                 </div>
               </div>              
+            </div>
+            <div class="col-md-6">
+              <div class="title"><h4>Schedule</h4></div>
+              <table class="table table-hover">
+                <thead>
+                <tr>
+                <th>Working day</th>
+                <th>Time</th>
+                <th *ngIf="isManager"></th>
+                <th *ngIf="isManager"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let schedule of barber.schedules">
+                    <td>{{schedule.workDay}}</td>
+                    <td>{{schedule.startTime}} ~ {{schedule.endTime}}</td>
+                    <td *ngIf="isManager"><div (click)="updateSchedule($event, schedule._id)">Change Schedule</div></td>
+                    <td *ngIf="isManager"><div (click)="deleteSchedule($event, schedule._id)">Delete Schedule</div></td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+              <div class="title"><h4>Reviews</h4></div>
+              <table class="table table-hover">
+                <thead>
+                <tr>
+                
+                <th>Rating</th>
+                <th>Comment</th>
+                
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let review of barber.reviews">
+                    
+                    <td *ngIf="review.valid">{{review.ratings}}</td>
+                    <td *ngIf="review.valid">{{review.comments}}</td>
+                </tr>
+                </tbody>
+                </table>
             </div>
           </div>
         </div>
