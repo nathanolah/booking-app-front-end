@@ -13,11 +13,17 @@ import { NewReviewComponent } from './new-review/new-review.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AboutComponent } from './about/about.component';
 import {GuardAuthService} from './guard-auth.service'
 import { LoginBarberComponent } from './login-barber/login-barber.component';
 import { AddBarberComponent } from './add-barber/add-barber.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
+import { AppointmentConfirmationComponent } from './appointment-confirmation/appointment-confirmation.component';
+import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
+import { CustomersListComponent } from './customers-list/customers-list.component';
+import { CustomersComponent } from './customers/customers.component';
+
 const routes: Routes = [
   {path: "signup", component: SignupComponent},
   {path: "book", component: BookComponent},
@@ -26,15 +32,21 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "login", component: LoginComponent },
   {path: "login-barber",component:LoginBarberComponent},
+  { path: 'customer/:id', component: CustomersComponent },
   {path: "register", component: RegisterComponent },
+  { path: 'customers-list', component: CustomersListComponent},
   {path: "shopProfile/:id", component: ShopProfileComponent},
   {path: "profile-page", component: ProfilePageComponent},
   {path: "newReview/:id", component:NewReviewComponent, canActivate:[GuardAuthService]},
   {path: "reviews-list", component:ReviewListComponent, canActivate:[GuardAuthService]},
+  { path: 'appointment-list', component: AppointmentListComponent},
   {path: "barProf/:id", component:BarberProfileComponent},
-  {path: "appointment-form", component:AppointmentFormComponent},
+  {path: "appointment-form/:id", component:AppointmentFormComponent},
+  { path: 'appointment-confirmation/:id', component: AppointmentConfirmationComponent},
   {path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardAuthService]},
   {path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
+  { path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
+  
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent }
 ];

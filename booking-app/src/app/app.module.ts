@@ -22,15 +22,16 @@ import { AboutComponent } from './about/about.component';
 import { FormsModule } from "@angular/forms";
 import { JwtModule } from "@auth0/angular-jwt";
 
-import { PagingComponent } from './paging/paging.component'; 
-
 import { InterceptTokenService } from './intercept-token.service';
 import { LoginBarberComponent } from './login-barber/login-barber.component';
+import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
 import { AddBarberComponent } from './add-barber/add-barber.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
-import { WaitingListComponent } from './waiting-list/waiting-list.component';
 
-
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { AppointmentConfirmationComponent } from './appointment-confirmation/appointment-confirmation.component';
+import { CustomersListComponent } from './customers-list/customers-list.component';
+import { CustomersComponent } from './customers/customers.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -45,6 +46,7 @@ export function tokenGetter() {
     HeaderComponent,
     BarberListComponent,
     FooterComponent,
+    CustomersComponent,
     HomeComponent,
     LoginComponent,
     RegisterComponent,
@@ -52,15 +54,18 @@ export function tokenGetter() {
     ProfilePageComponent,
     ShopProfileComponent,
     NewReviewComponent,
+    CustomersComponent,
+    CustomersListComponent,
     AppointmentFormComponent,
+    AppointmentByBarberComponent,
     BarberProfileComponent,
     ReviewListComponent,
     AboutComponent,
     LoginBarberComponent,
     AddBarberComponent,
     EditScheduleComponent,
-    PagingComponent,
-    WaitingListComponent
+    AppointmentListComponent,
+    AppointmentConfirmationComponent
   ],
   imports: [
     HttpClientModule,
