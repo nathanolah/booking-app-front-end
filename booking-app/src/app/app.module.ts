@@ -22,10 +22,13 @@ import { AboutComponent } from './about/about.component';
 import { FormsModule } from "@angular/forms";
 import { JwtModule } from "@auth0/angular-jwt";
 
+import { PagingComponent } from './paging/paging.component'; 
+
 import { InterceptTokenService } from './intercept-token.service';
 import { LoginBarberComponent } from './login-barber/login-barber.component';
 import { AddBarberComponent } from './add-barber/add-barber.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
+import { WaitingListComponent } from './waiting-list/waiting-list.component';
 
 
 
@@ -55,7 +58,9 @@ export function tokenGetter() {
     AboutComponent,
     LoginBarberComponent,
     AddBarberComponent,
-    EditScheduleComponent
+    EditScheduleComponent,
+    PagingComponent,
+    WaitingListComponent
   ],
   imports: [
     HttpClientModule,
