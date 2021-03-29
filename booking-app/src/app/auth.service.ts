@@ -34,10 +34,10 @@ export class AuthService {
 
   login(customer: Customer):Observable<any>{
     //return this.http.post<any>('http://localhost:8080/api/customers/login', customer);
-    return this.http.post<any>('https://lit-bastion-23590.herokuapp.com/api/customers/login', customer);
+    return this.http.post<any>('https://groupone-booking-app.herokuapp.com/api/customers/login', customer);
   }
   loginBar(bar:Barber):Observable<any>{
     //return this.http.post<any>('http://localhost:8080/api/customers/login', customer);
-    return this.http.post<any>('https://lit-bastion-23590.herokuapp.com/api/barbers/login', bar);
+    return this.http.post<any>('https://groupone-booking-app.herokuapp.com/api/barbers/login', bar);
   }
 }
