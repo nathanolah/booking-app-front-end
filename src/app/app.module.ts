@@ -33,6 +33,8 @@ import { AppointmentConfirmationComponent } from './appointment-confirmation/app
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { CustomersComponent } from './customers/customers.component';
 
+import { WaitingListComponent } from './waiting-list/waiting-list.component';
+
 
 
 export function tokenGetter() {
@@ -67,7 +69,8 @@ export function tokenGetter() {
     AddBarberComponent,
     EditScheduleComponent,
     AppointmentListComponent,
-    AppointmentConfirmationComponent
+    AppointmentConfirmationComponent,
+    WaitingListComponent
   ],
   imports: [
     HttpClientModule,
