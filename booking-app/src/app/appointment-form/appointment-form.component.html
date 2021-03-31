@@ -18,7 +18,7 @@
       <input type="text" class="form-control" placeholder = "Please Confirm Your Email"  name="Email" id="email" [(ngModel)]="email">
     </div>
     <div class ="col-sm"></div>
-    </div>       
+    </div>          
     <div class="row">
       <div class ="col-sm">
         
@@ -53,11 +53,21 @@
         <div class = "col-sm">
        <input type="text" class="form-control" placeholder = "day" maxlength = "2" size = "1" name="day" id="day" [(ngModel)]="day">
       </div>
+
+      <div class ="col-sm">
+        <button class="btn btn-primary" (click)="getAvailableTimes()">Get Days Availability</button>
+        </div>
       
         
+      <div class ="col-sm">
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="time" id="time" [(ngModel)]="time">
+          <option selected>Available Times</option>
+          <option *ngFor="let time of availableTimes" [value] = "time">{{time}}</option>          
+        </select>
+      </div>
+    </div>
         
-        
-        <div class ="col-sm">
+       <!-- <div class ="col-sm">
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="time" id="time" [(ngModel)]="time">
           <option selected>Available Times</option>
           <option value="9 00">9am</option>
@@ -76,7 +86,7 @@
       <div class ="col-sm"></div>
       <div class ="col-sm"></div>
       <div class ="col-sm"></div>
-    </div>
+    </div> -->
       <!--</div>-->  
           
   

@@ -19,11 +19,13 @@ export class AppointmentFormComponent implements OnInit {
   year: string = "";
   time: string = "";
   fullDate: string ="";
+  availableTimes: Array<string> = [];
   
 
   constructor(private data: AppointmentService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
+    
     this.querySub = this.route.params.subscribe(params => {
       this.data.getOneBarber(params['id']).subscribe(data => {        
         
@@ -34,6 +36,12 @@ export class AppointmentFormComponent implements OnInit {
   })
 })
 
+ }
+
+ public getAvailableTimes():void{
+   console.log(this.month);
+
+  this.availableTimes = ["1", "2", "3", "4"];
  }
 
  public onSubmit():void{
