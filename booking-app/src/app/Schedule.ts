@@ -1,7 +1,7 @@
 export class Schedule{
 
     _id:String;
-    workDay:String;
+    workDate:String;
     startTime:String;
     endTime:String;
     

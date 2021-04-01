@@ -62,7 +62,7 @@
       <div class ="col-sm">
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="time" id="time" [(ngModel)]="time">
           <option selected>Available Times</option>
-          <option *ngFor="let time of availableTimes" [value] = "time">{{time}}</option>          
+          <option *ngFor="let time of availableTimes" [value] = "time.timeValue">{{time.timeDis}}</option>          
         </select>
       </div>
     </div>
