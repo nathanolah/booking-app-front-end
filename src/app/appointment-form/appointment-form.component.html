@@ -1,0 +1,118 @@
+<!--<div class="container">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">-->
+          <!-- Tabs Titles -->
+      
+          <!-- Icon -->
+ <!---->         <div class="container">
+  <div class="row">
+    <div class="col-sm">                
+      <strong>You are currently booking an appointment with {{this.barber.firstName}}</strong>
+    </div>
+             
+  </div>
+  
+  <form #f="ngForm" (ngSubmit)="onSubmit()">  
+    <div class ="row">                  
+    <div class ="col-sm">
+      <input type="text" class="form-control" placeholder = "Please Confirm Your Email"  name="Email" id="email" [(ngModel)]="email">
+    </div>
+    <div class ="col-sm"></div>
+    </div>          
+    <div class="row">
+      <div class ="col-sm">
+        
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name ="year" id="year" [(ngModel)]="year">
+            <option selected>Select Year</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>                      
+          </select>
+        </div>
+      <div class ="col-sm">
+        
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name ="month" id="month" [(ngModel)]="month">
+          <option selected>Select Month</option>
+          <option value="0">January</option>
+          <option value="1">February</option>
+          <option value="2">March</option>
+          <option value="3">April</option>
+          <option value="4">May</option>
+          <option value="5">June</option>
+          <option value="6">July</option>
+          <option value="7">August</option>
+          <option value="8">September</option>
+          <option value="9">October</option>
+          <option value="10">November</option>
+          <option value="11">December</option>
+        </select>
+      </div>
+    
+      
+      
+      
+        <div class = "col-sm">
+       <input type="text" class="form-control" placeholder = "day" maxlength = "2" size = "1" name="day" id="day" [(ngModel)]="day">
+      </div>
+
+      <div class ="col-sm">
+        <button class="btn btn-primary" (click)="getAvailableTimes()">Get Day's Availability</button>
+        </div>
+      
+        
+      <div class ="col-sm">
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="time" id="time" [(ngModel)]="time">
+          <option selected>Available Times</option>
+          <option *ngFor="let time of availableTimes" [value] = "time.timeValue">{{time.timeDis}}</option>          
+        </select>
+      </div>
+    </div>
+        
+       <!-- <div class ="col-sm">
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="time" id="time" [(ngModel)]="time">
+          <option selected>Available Times</option>
+          <option value="9 00">9am</option>
+          <option value="9 45">9:45am</option>
+          <option value="10 30">10:30am</option>
+          <option value="11 15">11:15am</option>
+          <option value="1 00">1pm</option>
+          <option value="1 45">1:45pm</option>
+          <option value="2 30">2:30pm</option>
+          <option value="3 15">3:15pm</option>
+          <option value="4 00">4pm</option>
+          <option value="4 45">4:45pm</option>
+        </select>
+      </div>
+      <div class ="col-sm"></div>
+      <div class ="col-sm"></div>
+      <div class ="col-sm"></div>
+      <div class ="col-sm"></div>
+    </div> -->
+      <!--</div>-->  
+          
+  
+
+
+<div class="row">
+  <div class ="col-sm">
+<button class="btn btn-primary" type="submit">Book Appointment</button>
+</div>
+</div>
+</form>
+
+
+
+
+
+
+
+
+<!--</div>-->
+
+</div>
+          
+  
+
+         
+          
+      
+          

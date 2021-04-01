@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+    
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <br>
+          <strong>Register for an account</strong>
+          <br><br>
+        </div>
+
+        <!-- Create an error message box  -->
+        <div class="errorMessage">
+          
+        </div>
+    
+        <!-- Register Form -->
+        <div class="col-md-4">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <div class="form-group">
+            <label class="control-label" for="name">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email" placeholder="ex) abc@ef.com" autofocus>
+
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="name">First name:</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="firstName" >
+
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="name">Last name:</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="lastName">
+
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="name">Phone Number:</label>
+            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber">
+
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="name">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="name">Confirm Password:</label>
+            <input type="password" class="form-control" id="cpassword" name="cpassword" [(ngModel)]="cpassword">
+
+          </div>
+          <div class="alert alert-danger" *ngIf="warning">
+            {{warning}}
+          </div>
+          <br>
+          <button class="btn btn-primary pull-right" type="submit">Create Account</button>
+        </form>
+      </div>
+    
+        <!-- Form footer -->
+        <div id="formFooter">
+        </div>
+    
+      </div>
+    </div>
+</div>

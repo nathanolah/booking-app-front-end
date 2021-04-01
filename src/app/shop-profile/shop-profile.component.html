@@ -1,0 +1,90 @@
+
+<div class="container">
+  <!-- <div class="title">
+      <strong>{{shop.barberShopName}}</strong>
+  </div> -->
+  <br>
+
+  <!-- Shop Info -->
+  <div class="row">
+      <div class="col">  
+          <div class="card" style="width: 33rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{shop.barberShopName}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Shop Info</h6>
+                <p class="card-text">Located at: {{shop.address}}</p>
+                <p class="card-text">You have question? call {{shop.phoneNumber}}</p>
+                <br><br>
+              </div>
+          </div>
+          <br>
+      </div>
+      <div class="col">
+          <div class="card" style="width: 34rem;">
+              <div class="card-body">
+                  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="..." class="d-block w-100" alt="Shop Image">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                  </div> 
+              </div>
+          </div>
+      </div> 
+  </div>
+
+  <!-- Barbers list -->
+  <div class="title" style="text-align: left;">
+      <strong>Barbers</strong>
+      <div *ngIf="isManager" (click)="Add($event, shop._id)">add barber</div>
+  </div>
+  <div class="row">
+      <div class="col">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+          <th>Barber Name</th>
+          <th>email</th>
+          <th>Contact</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let barber of barbers" (click)="rowClicked($event, barber._id)">
+              <td>{{barber.firstName}} {{barber.lastName}}</td>
+              <td>{{barber.email}}</td>
+              <td>{{barber.phoneNumber}}</td>
+          </tr>
+          </tbody>
+          </table>
+
+      </div>
+      <div class="col">
+          <div class="card" style="width: 34rem;">
+              <div class="card-body">
+                  <p>Map Location(future Update)</p>
+                  <br><br><br><br><br><br><br><br>
+              </div>
+          </div>
+      </div>
+      
+  </div>
+  <br><br><br>
+
+  <!-- Queue -->
+  <app-waiting-list></app-waiting-list>
+  
+
+  <!-- Reviews -->
+
+  <div class="row">
+      <br><br>
+  </div>
+
+</div>
