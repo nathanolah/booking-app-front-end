@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BarberShop } from '../BarberShop';
 import { BookingServiceService } from '../booking-service.service';
 
@@ -11,11 +11,29 @@ import { BookingServiceService } from '../booking-service.service';
 export class HomeComponent implements OnInit {
 
   shops: Array<BarberShop>;
+  page: number = 1;
+  querySub: any;
 
-  constructor(private book:BookingServiceService, private router:Router) { }
+  constructor(private book: BookingServiceService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.book.getBarberShops().subscribe(data=>{this.shops=data});
+
+    this.querySub = this.route.queryParams.subscribe(params => {
+      this.getPage(+params['page'] || 1);
+    });
+
+    //this.book.getBarberShops().subscribe(data=>{this.shops=data});
+
+  }
+
+  getPage(num: any) {
+    this.book.getBarberShopsPage(num).subscribe(data => {
+      if (data.length > 0) {
+        this.shops = data;
+        this.page = num;
+      }
+      
+    });
   }
 
   rowClicked(e,id)

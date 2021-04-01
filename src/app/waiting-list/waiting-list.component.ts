@@ -39,12 +39,30 @@ export class WaitingListComponent implements OnInit {
 
       // Auto refresh page
       this.updateSubscription = interval(1500).subscribe(() => {
+        //this.getPage(+params['page'] || 1);
+
         this.updateQueueList(params['id'], +params['page'] || 1);
       });
       
     });
 
   }
+
+
+  // getPage(num: any) {
+  //   this.querySub = this.route.params.subscribe(params => {
+  //     this.updateQueueList(params['id'], num);
+  //   });
+
+  //   // this.data.getBarberShopsPagination(num).subscribe(data => {
+
+  //   //   if (data.length > 0) {
+  //   //     this.shops = data;
+  //   //     this.page = num;
+  //   //   }
+      
+  //   // });
+  // }
 
   // Updates list after auto refresh
   updateQueueList(id: string, num: any): any {
@@ -78,9 +96,9 @@ export class WaitingListComponent implements OnInit {
 
     if (this.clicked === "leaveQueue") {
 
-      this.newCustomer.firstName = this.queueFirstName;
-      this.newCustomer.lastName = this.queueLastName;
-      this.newCustomer.email = this.queueEmail;
+      this.newCustomer.firstName = this.queueFirstName.replace(/\s/g, ""); // Clear trailing whitespace
+      this.newCustomer.lastName = this.queueLastName.replace(/\s/g, "");
+      this.newCustomer.email = this.queueEmail.replace(/\s/g, "");
 
       this.querySub = this.route.params.subscribe(params => {
         this.data.removeFromQueue(params['id'] , this.newCustomer).subscribe(() => {

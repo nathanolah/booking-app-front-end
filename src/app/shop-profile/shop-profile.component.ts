@@ -15,13 +15,15 @@ export class ShopProfileComponent implements OnInit {
   shop:BarberShop;
   barbers:Array<Barber>
   isManager:boolean;
-  constructor(private auth:AuthService, private book:BookingServiceService, private route:Router, private aroute:ActivatedRoute) { }
-  public token :any;
+
+  constructor(private auth: AuthService, private book: BookingServiceService, private route: Router, private aroute: ActivatedRoute) {}
+
+  public token: any;
+
   ngOnInit(): void {
-    
-  
-     
+       
     let id=this.aroute.snapshot.params['id'];
+    
     this.book.getBarberShop(id).subscribe(data=>{
       this.shop=data;
       this.barbers=data.barbers;
