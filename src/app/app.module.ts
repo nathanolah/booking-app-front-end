@@ -35,6 +35,7 @@ import { CustomersComponent } from './customers/customers.component';
 
 import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { PagingComponent } from './paging/paging.component';
+import { AppointmentsForDayComponent } from './appointments-for-day/appointments-for-day.component';
 
 
 
@@ -72,7 +73,8 @@ export function tokenGetter() {
     AppointmentListComponent,
     AppointmentConfirmationComponent,
     WaitingListComponent,
-    PagingComponent
+    PagingComponent,
+    AppointmentsForDayComponent
   ],
   imports: [
     HttpClientModule,
