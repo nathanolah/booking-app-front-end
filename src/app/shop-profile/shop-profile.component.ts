@@ -34,8 +34,14 @@ export class ShopProfileComponent implements OnInit {
       this.address = this.shop.address;
       var add=this.address.split(" ");
       //this.newAdd=add.toString();
-      var addressnew= `https://maps.google.com/maps?q=${add[0]}%20${add[1]}%20${add[2]}&t=&z=15&ie=UTF8&iwloc=&output=embed`
-      
+      var addressnew;
+      if(add.length == 3)
+      {
+        addressnew= `https://maps.google.com/maps?q=${add[0]}%20${add[1]}%20${add[2]}&t=&z=15&ie=UTF8&iwloc=&output=embed`
+      }
+      else{
+        addressnew= `https://maps.google.com/maps?q=${add[0]}%20${add[1]}%20${add[2]}%20${add[3]}&t=&z=15&ie=UTF8&iwloc=&output=embed`
+      }
       this.doc.getElementById('gmap_canvas').setAttribute('src', addressnew);
       console.log(this.barbers);
     })
