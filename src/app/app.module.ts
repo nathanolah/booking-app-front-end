@@ -21,7 +21,8 @@ import { ReviewListComponent } from './review-list/review-list.component';
 import { AboutComponent } from './about/about.component';
 import { FormsModule } from "@angular/forms";
 import { JwtModule } from "@auth0/angular-jwt";
-
+import { ChangeProfileComponent } from './change-profile/change-profile.component';
+import { AccountProfileComponent } from './account-profile/account-profile.component';
 
 import { InterceptTokenService } from './intercept-token.service';
 import { LoginBarberComponent } from './login-barber/login-barber.component';
@@ -72,7 +73,9 @@ export function tokenGetter() {
     AppointmentListComponent,
     AppointmentConfirmationComponent,
     WaitingListComponent,
-    PagingComponent
+    PagingComponent,
+    ChangeProfileComponent,
+    AccountProfileComponent
   ],
   imports: [
     HttpClientModule,
