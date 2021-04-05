@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { stringify } from '@angular/compiler/src/util';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Event, NavigationStart } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Barber } from '../Barber'
@@ -15,8 +17,9 @@ export class ShopProfileComponent implements OnInit {
   shop:BarberShop;
   barbers:Array<Barber>
   isManager:boolean;
-
-  constructor(private auth: AuthService, private book: BookingServiceService, private route: Router, private aroute: ActivatedRoute) {}
+  public address:String;
+  public newAdd:string;
+  constructor(@Inject(DOCUMENT) private doc:Document, private auth: AuthService, private book: BookingServiceService, private route: Router, private aroute: ActivatedRoute) {}
 
   public token: any;
 
@@ -28,7 +31,12 @@ export class ShopProfileComponent implements OnInit {
       this.shop=data;
       this.barbers=data.barbers;
 
-      console.log(this.shop);
+      this.address = this.shop.address;
+      var add=this.address.split(" ");
+      //this.newAdd=add.toString();
+      var addressnew= `https://maps.google.com/maps?q=${add[0]}%20${add[1]}%20${add[2]}&t=&z=15&ie=UTF8&iwloc=&output=embed`
+      
+      this.doc.getElementById('gmap_canvas').setAttribute('src', addressnew);
       console.log(this.barbers);
     })
 

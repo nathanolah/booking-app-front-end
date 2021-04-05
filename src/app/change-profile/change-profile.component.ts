@@ -17,6 +17,8 @@ export class ChangeProfileComponent implements OnInit {
   public firstName:string;
   public lastName:string;
   public phoneNumber:string;
+  public password:string;
+  public cpassword:string;
   public token: any;  
   public roleT: number;
 
@@ -51,7 +53,9 @@ export class ChangeProfileComponent implements OnInit {
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.token.email,
-        phoneNumber: this.phoneNumber
+        phoneNumber: this.phoneNumber,
+        password: this.password,
+        cpassword:this.cpassword
 
       }
 
