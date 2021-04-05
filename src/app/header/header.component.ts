@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router, Event, NavigationStart } from '@angular/router';
 import { AuthService } from '../auth.service';
 
@@ -10,7 +11,7 @@ import { AuthService } from '../auth.service';
 export class HeaderComponent implements OnInit {
 
   public token :any;
-  constructor(private router: Router,private auth:AuthService) { }
+  constructor(@Inject(DOCUMENT) private doc:Document, private router: Router,private auth:AuthService) { }
 
   ngOnInit(): void {
     this.router.events.subscribe((event:Event)=>
@@ -24,4 +25,9 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  logout(e):void{
+    console.log("clicked log out")
+    this.auth.logout();
+    this.doc.defaultView.location.reload();
+  }
 }
