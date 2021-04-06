@@ -63,7 +63,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let schedule of barber.schedules">
-                    <td>{{schedule.workDay}}</td>
+                    <td>{{schedule.workDate}}</td>
                     <td>{{schedule.startTime}} ~ {{schedule.endTime}}</td>
                     <td *ngIf="isManager"><div (click)="updateSchedule($event, schedule._id)">Change Schedule</div></td>
                     <td *ngIf="isManager"><div (click)="deleteSchedule($event, schedule._id)">Delete Schedule</div></td>
@@ -85,8 +85,11 @@
                 <tbody>
                 <tr *ngFor="let review of barber.reviews">
                     
-                    <td *ngIf="review.valid">{{review.ratings}}</td>
-                    <td *ngIf="review.valid">{{review.comments}}</td>
+                    <td *ngIf="review.valid=='Allowed'">{{review.ratings}}</td>
+                    <td *ngIf="review.valid=='Hidden'&&token.role=='Manager'"><span style="color:crimson">{{review.ratings}}</span> </td>
+
+                    <td *ngIf="review.valid=='Allowed'">{{review.comments}}</td>
+                    <td *ngIf="review.valid=='Hidden'&&token.role=='Manager'"><span style="color:crimson">Hidden</span> {{review.comments}}</td>
                 </tr>
                 </tbody>
                 </table>

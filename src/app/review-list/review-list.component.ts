@@ -11,7 +11,7 @@ import { Review } from '../Review';
 })
 export class ReviewListComponent implements OnInit {
 
-  reviews:Array<Review>
+  public reviews:Array<Review>
   constructor(@Inject(DOCUMENT) private doc:Document,
     private book:BookingServiceService, private route:Router) { }
 
@@ -28,7 +28,7 @@ export class ReviewListComponent implements OnInit {
     this.book.getReviewByID(id).subscribe(data=>
       {
 
-        data.valid=true;
+        data.valid="Allowed";
         console.log(data);
         this.book.updateReview(id,data).subscribe(sucess=>
           {
@@ -43,12 +43,17 @@ export class ReviewListComponent implements OnInit {
   {
    
       
-        this.book.deleteReview(id).subscribe(sucess=>
+    this.book.getReviewByID(id).subscribe(data=>
+      {
+
+        data.valid="Hidden";
+        console.log(data);
+        this.book.updateReview(id,data).subscribe(sucess=>
           {
             alert(sucess);
             this.doc.defaultView.location.reload();
           });
-     
+      })
     
   }
 
