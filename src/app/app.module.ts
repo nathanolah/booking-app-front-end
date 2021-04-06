@@ -77,7 +77,7 @@ export function tokenGetter() {
     PagingComponent,
 
     ChangeProfileComponent,
-    AccountProfileComponent
+    AccountProfileComponent,
 
     AppointmentsForDayComponent
 
