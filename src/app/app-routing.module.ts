@@ -23,6 +23,7 @@ import { AppointmentConfirmationComponent } from './appointment-confirmation/app
 import { AppointmentByBarberComponent } from './appointment-by-barber/appointment-by-barber.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { CustomersComponent } from './customers/customers.component';
+import { AppointmentsForDayComponent } from './appointments-for-day/appointments-for-day.component'
 
 const routes: Routes = [
   {path: "signup", component: SignupComponent},
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardAuthService]},
   {path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
   { path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
+  { path: 'todayBarberAppointments/:id', component: AppointmentsForDayComponent},
   
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent }

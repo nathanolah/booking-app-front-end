@@ -10,8 +10,9 @@
                       <p class="text-secondary mb-1">Barber</p>
                       
 
-                      <div (click)="clicked($event, barber._id)" class="btn btn-outline-primary">new Review</div>   
-                      <a [routerLink]="['/appointment-form', barber._id]" class="btn btn-outline-primary">Book an Appointment</a>                       
+                      <div (click)="clicked($event, barber._id)" class="btn btn-outline-primary">New Review</div>   
+                      <a [routerLink]="['/appointment-form', barber._id]" class="btn btn-outline-primary">Book an Appointment</a>
+                      <a [routerLink]="['/todayBarberAppointments', barber._id]" class="btn btn-outline-primary">View Days Appointments</a>                       
                     </div>
                   </div>
                 </div>
