@@ -15,7 +15,7 @@ import { BarberProfileComponent } from './barber-profile/barber-profile.componen
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AboutComponent } from './about/about.component';
-import {GuardAuthService} from './guard-auth.service'
+import {GuardAuthService} from './guard-auth.service';
 import { LoginBarberComponent } from './login-barber/login-barber.component';
 import { AddBarberComponent } from './add-barber/add-barber.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
@@ -27,7 +27,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { AccountProfileComponent } from './account-profile/account-profile.component';
 import { ChangeProfileComponent } from './change-profile/change-profile.component';
 
-import { AppointmentsForDayComponent } from './appointments-for-day/appointments-for-day.component'
+import { AppointmentsForDayComponent } from './appointments-for-day/appointments-for-day.component';
 
 const routes: Routes = [
   {path: "signup", component: SignupComponent},
