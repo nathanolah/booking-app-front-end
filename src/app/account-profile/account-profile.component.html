@@ -1,0 +1,38 @@
+<div class="container">
+    <div class='title'>
+       <h4> Your profile </h4>
+    </div>
+    <hr>
+    <div>
+        <dl>
+       
+            <dt>Your Name</dt>
+       
+            <dd>{{cust.firstName}} {{cust.lastName}}</dd>
+
+            <dt>Email</dt>
+            <dd>{{cust.email}}</dd>
+
+            <dt>Contact</dt>
+            <dd>{{cust.phoneNumber}}</dd>
+
+            <dt>Role</dt>
+            <dd>{{role}}</dd>
+        </dl>
+
+       
+        
+    </div>
+    <hr>
+
+    <div class="button">
+        <p (click)="change($event,cust._id)">Change your profile</p>
+    </div>
+
+
+
+
+
+
+
+</div>    

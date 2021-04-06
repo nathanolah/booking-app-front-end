@@ -21,6 +21,11 @@ export class AuthService {
     return this.jwtHelper.decodeToken(token);
   }
 
+  logout():any{
+    localStorage.removeItem('access_token');
+
+  }
+
   isAuthenticated():boolean{
     const token=localStorage.getItem('access_token');
 

@@ -86,8 +86,11 @@
                 <tbody>
                 <tr *ngFor="let review of barber.reviews">
                     
-                    <td *ngIf="review.valid">{{review.ratings}}</td>
-                    <td *ngIf="review.valid">{{review.comments}}</td>
+                    <td *ngIf="review.valid=='Allowed'">{{review.ratings}}</td>
+                    <td *ngIf="review.valid=='Hidden'&&token.role=='Manager'"><span style="color:crimson">{{review.ratings}}</span> </td>
+
+                    <td *ngIf="review.valid=='Allowed'">{{review.comments}}</td>
+                    <td *ngIf="review.valid=='Hidden'&&token.role=='Manager'"><span style="color:crimson">Hidden</span> {{review.comments}}</td>
                 </tr>
                 </tbody>
                 </table>

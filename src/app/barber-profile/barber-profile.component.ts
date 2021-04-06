@@ -11,7 +11,7 @@ import { BookingServiceService } from '../booking-service.service';
 })
 export class BarberProfileComponent implements OnInit {
   isManager:boolean;
-  barber:Barber;
+  public barber:Barber;
   public token:any;
   constructor(private book:BookingServiceService,private auth:AuthService, private route:Router, private aroute:ActivatedRoute) { }
 

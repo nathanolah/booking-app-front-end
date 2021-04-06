@@ -14,10 +14,10 @@
                 <tbody>
                 <tr *ngFor="let review of reviews">
                     
-                    <td *ngIf="!(review.valid)">{{review.ratings}}</td>
-                    <td *ngIf="!(review.valid)">{{review.comments}}</td>
-                    <td *ngIf="!(review.valid)">{{review.author.firstName}} {{review.author.lastName}}</td>
-                    <td *ngIf="!(review.valid)"><button (click)="validate($event, review._id)">OK</button><button (click)="dismiss($event, review._id)">Refuse</button></td>
+                    <td *ngIf="(review.valid=='Submit')">{{review.ratings}}</td>
+                    <td *ngIf="(review.valid=='Submit')">{{review.comments}}</td>
+                    <td *ngIf="(review.valid=='Submit')">{{review.author.firstName}} {{review.author.lastName}}</td>
+                    <td *ngIf="(review.valid=='Submit')"><button (click)="validate($event, review._id)">OK</button><button (click)="dismiss($event, review._id)">Refuse</button></td>
 
                 </tr>
                 </tbody>

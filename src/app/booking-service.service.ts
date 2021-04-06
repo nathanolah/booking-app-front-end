@@ -89,6 +89,16 @@ export class BookingServiceService {
      return this.http.post<any>(`https://groupone-booking-app.herokuapp.com/api/customers/`, data)
   }
 
+  getCustomerByID(id):Observable<Customer>
+  {
+    return this.http.get<Customer>(`https://groupone-booking-app.herokuapp.com/api/customers/${id}`);
+  }
+
+  updateCustomer(id, newC: any):Observable<any>
+  {
+    return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/customers/${id}`, newC);
+  }
+
   //barbershop
 
   getBarberShops():Observable<BarberShop[]>{
