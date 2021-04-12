@@ -24,7 +24,7 @@ export class LoginBarberComponent implements OnInit {
     this.auth.loginBar(this.barber).subscribe(
       (success)=>{
         
-        console.log(success.token);
+        console.log(success);
         localStorage.setItem('access_token',success.token);
         this.router.navigate(['/home']);
       },
