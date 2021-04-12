@@ -7,5 +7,4 @@ export class BarberShop{
     address:String;
     barbers:Array<Barber>;
     barberShopQueue:Array<String>;
-    manager:String;
 }
