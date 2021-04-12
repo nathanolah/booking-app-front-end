@@ -18,6 +18,7 @@ import { AppointmentFormComponent } from './appointment-form/appointment-form.co
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { AboutComponent } from './about/about.component';
+
 import { FormsModule } from "@angular/forms";
 import { JwtModule } from "@auth0/angular-jwt";
 

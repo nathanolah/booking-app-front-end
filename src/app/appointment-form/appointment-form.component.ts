@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Appointment } from '../models/Appointment';
 import { AppointmentService } from '../Services/appointment.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationStart, Event } from '@angular/router';
 import { Barber } from '../models/Barber';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-appointment-form',
@@ -22,11 +23,18 @@ export class AppointmentFormComponent implements OnInit {
   fullDate: string ="";
   availableTimes: Array<{timeValue: String; timeDis: string}> = [];
   appointmentsForDay: Array<Appointment> = [];
+  public token :any;
   
 
-  constructor(private data: AppointmentService, private route: ActivatedRoute, private router: Router) {}
+  constructor(private data: AppointmentService, private route: ActivatedRoute, private router: Router, private auth:AuthService) {}
 
   ngOnInit(): void {
+    this.token=this.auth.readToken();
+    this.email = this.token.email;
+    console.log(this.email);
+    
+      
+   
     
     this.querySub = this.route.params.subscribe(params => {
       this.data.getOneBarber(params['id']).subscribe(data => {        
