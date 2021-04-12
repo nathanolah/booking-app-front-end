@@ -107,7 +107,7 @@ export class AppointmentFormComponent implements OnInit {
 
     for(let appointment of this.appointmentsForDay){
       compDate = new Date (appointment.startDate);
-      compDate = new Date (compDate.getTime() + Math.abs(tempDate.getTimezoneOffset()*-60000))
+      compDate = new Date (compDate.getTime())
       console.log(compDate);
       console.log(tempDate);
       if(tempDate.getTime() === compDate.getTime() ){
@@ -117,14 +117,15 @@ export class AppointmentFormComponent implements OnInit {
     }
     if(found == false){
       console.log("here");
-      //tempDate = new Date(tempDate.getTime() + Math.abs(tempDate.getTimezoneOffset()*-60000))
+      let tempValueDate = new Date(tempDate.getTime() + Math.abs(tempDate.getTimezoneOffset()*-60000))
+      let tempHoursValue = String(tempValueDate.getHours());
       tempHours = String(tempDate.getHours());
       if(tempDate.getMinutes() === 0){
         tempMins = String(tempDate.getMinutes()) + "0";
       }else{
         tempMins = String(tempDate.getMinutes())
       }
-      this.availableTimes.push({timeValue: tempHours + " " + tempMins, timeDis: tempHours + ":" + tempMins });
+      this.availableTimes.push({timeValue: tempHoursValue + " " + tempMins, timeDis: tempHours + ":" + tempMins });
     }
     tempDate.setMinutes(tempDate.getMinutes() + 45);
   }
