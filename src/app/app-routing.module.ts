@@ -14,7 +14,7 @@ import { BarberProfileComponent } from './barber-profile/barber-profile.componen
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AboutComponent } from './about/about.component';
-import {GuardAuthService} from './guard-auth.service'
+import {GuardAuthService} from './guard-auth.service';
 import { LoginBarberComponent } from './login-barber/login-barber.component';
 import { AddBarberComponent } from './add-barber/add-barber.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';

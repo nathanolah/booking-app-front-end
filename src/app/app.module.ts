@@ -80,6 +80,7 @@ export function tokenGetter() {
     AccountProfileComponent,
     AdminComponent,
     NewShopComponent
+    
   ],
   imports: [
     HttpClientModule,
