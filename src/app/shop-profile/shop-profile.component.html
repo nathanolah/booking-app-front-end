@@ -11,9 +11,10 @@
           <div class="card" style="width: 33rem;">
               <div class="card-body">
                 <h5 class="card-title">{{shop.barberShopName}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Shop Info</h6>
-                <p class="card-text">Located at: {{shop.address}}</p>
-                <p class="card-text">You have question? call {{shop.phoneNumber}}</p>
+                <hr>
+                <h6 class="card-subtitle mb-2">Shop Info</h6>
+                <h6 class="card-text mb-2 text-muted">{{shop.address}}</h6>
+                <h6 class="card-text mb-2 text-muted">Have a question? Call: {{shop.phoneNumber}}</h6>
                 <br><br>
               </div>
           </div>
@@ -22,28 +23,16 @@
       <div class="col">
           <div class="card" style="width: 34rem;">
               <div class="card-body">
-                  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img src="..." class="d-block w-100" alt="Shop Image">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="..." class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="..." class="d-block w-100" alt="...">
-                        </div>
-                      </div>
-                  </div> 
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3m3y892ngk5k1mjv4e2in6jm-wpengine.netdna-ssl.com%2Fwp-content%2Fuploads%2F2014%2F11%2Fpaul-mole-barber.jpg&f=1&nofb=1" alt="Shop Image">
               </div>
           </div>
       </div> 
   </div>
 
   <!-- Barbers list -->
-  <div class="title" style="text-align: left;">
-      <strong>Barbers</strong>
-      <div *ngIf="isManager" (click)="Add($event, shop._id)">add barber</div>
+  <div class="title" style="text-align: left; padding: 1px;">
+      <strong>Barbers Available</strong>
+      <div *ngIf="isManager" (click)="Add($event, shop._id)">Add barber</div>
   </div>
   <div class="row">
       <div class="col">
@@ -51,7 +40,7 @@
           <thead>
           <tr>
           <th>Barber Name</th>
-          <th>email</th>
+          <th>Email</th>
           <th>Contact</th>
           <th >Role</th>
           <th></th>
@@ -81,23 +70,28 @@
       <div class="col">
           <div class="card" style="width: 34rem;">
               <div class="card-body">
-                  <p>Map Location</p>
-                  <div class="mapouter"><div class="gmap_canvas"><iframe width="400" height="400" id="gmap_canvas"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                  <div class="mapouter">
+                      <div class="gmap_canvas">
+                          <iframe width="505" height="400" id="gmap_canvas"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                       </div>
+                   </div>
               </div>
           </div>
       </div>
       
-  </div>
-  <br><br><br>
+    </div>
+    <br><br>
+    <hr>
+    <br><br>
+    <!-- Queue -->
 
-  <!-- Queue -->
-  <app-waiting-list></app-waiting-list>
-  
+    <app-waiting-list></app-waiting-list>
 
+    <br><hr>
   <!-- Reviews -->
 
   <div class="row">
-      <br><br>
+      <br><br><br>
   </div>
 
 </div>
