@@ -77,8 +77,12 @@ export function tokenGetter() {
     ChangeProfileComponent,
     AccountProfileComponent,
     AdminComponent,
-    NewShopComponent,
-    AddScheduleComponent
+
+   
+    AddScheduleComponent,
+
+    NewShopComponent
+    
   ],
   imports: [
     HttpClientModule,
