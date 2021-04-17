@@ -23,31 +23,7 @@ export class GuardAuthService implements CanActivate{
     return true;
   }
 
-  isEditor():boolean{
-
-    if(!this.auth.isAuthenticated())
-    {
-      alert('Need to login first');
-
-      this.router.navigate(['login']);
-      return false;
-
-
-    }
-    else{
-      let token = this.auth.readToken();
-      if(token.role == "customer"){
-        alert('You do not have access');
-
-        this.router.navigate(['home']);
-        return false;
-      }
-      return true;
-
-
-    }
-
-
-  }
-
+ 
+     
+  
 }

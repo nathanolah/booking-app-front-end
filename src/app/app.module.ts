@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookComponent } from './book/book.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { BarberListComponent } from './barber-list/barber-list.component';
@@ -18,7 +17,6 @@ import { AppointmentFormComponent } from './appointment-form/appointment-form.co
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { AboutComponent } from './about/about.component';
-
 import { FormsModule } from "@angular/forms";
 import { JwtModule } from "@auth0/angular-jwt";
 
@@ -39,6 +37,7 @@ import { ChangeProfileComponent } from './change-profile/change-profile.componen
 import { AccountProfileComponent } from './account-profile/account-profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { NewShopComponent } from './new-shop/new-shop.component';
+import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 
 
 
@@ -50,7 +49,6 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
     SignupComponent,
     HeaderComponent,
     BarberListComponent,
@@ -79,14 +77,15 @@ export function tokenGetter() {
     ChangeProfileComponent,
     AccountProfileComponent,
     AdminComponent,
-    NewShopComponent
+    NewShopComponent,
+    AddScheduleComponent
   ],
   imports: [
     HttpClientModule,
-    FormsModule,
+    
     BrowserModule,
     AppRoutingModule,
-    
+    FormsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
