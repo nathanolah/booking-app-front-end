@@ -1,0 +1,12 @@
+<div class="card" style="width: 33rem;" *ngIf="appointment">
+    <div class="card-body">
+      <h5 class="card-title">Appointment with {{ appointment.barberID.firstName }} {{ appointment.barberID.lastName }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Time of Appointment</h6>
+      <p class="card-text">{{ appointment.startDate | date:'short' }} - {{ appointment.endDate | date:'shortTime' }}</p>            
+      <br><br>
+    </div>
+</div>
+<div>
+    <br>
+    <button class="btn btn-primary" (click)="deleteApt($event)">Cancel Appointment</button>
+</div>

@@ -37,6 +37,8 @@ import { CustomersComponent } from './customers/customers.component';
 import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { PagingComponent } from './paging/paging.component';
 import { AppointmentsForDayComponent } from './appointments-for-day/appointments-for-day.component';
+import { CustomerAppointmentsComponent } from './customer-appointments/customer-appointments.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 
 
@@ -79,7 +81,11 @@ export function tokenGetter() {
     ChangeProfileComponent,
     AccountProfileComponent,
 
-    AppointmentsForDayComponent
+    AppointmentsForDayComponent,
+
+    CustomerAppointmentsComponent,
+
+    AppointmentComponent
 
   ],
   imports: [

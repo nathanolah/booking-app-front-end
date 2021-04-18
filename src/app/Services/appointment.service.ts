@@ -14,9 +14,15 @@ export class AppointmentService {
   getAllAppointments() {
     return this.http.get<Array<Appointment>>(`https://groupone-booking-app.herokuapp.com/api/appointments/`);
   }
+  deleteAppointment(id:any) {
+    return this.http.delete<Array<Appointment>>(`https://groupone-booking-app.herokuapp.com/api/appointments/${id}`);
+  }
 
   getBarberAppointments(id: any) {
     return this.http.get<Array<Appointment>>(`https://groupone-booking-app.herokuapp.com/api/appointments/barbAppointments/${id}`);
+  }
+  getCustomerAppointments(id: any) {
+    return this.http.get<Array<Appointment>>(`https://groupone-booking-app.herokuapp.com/api/appointments/custAppointments/${id}`);
   }
   getBarberAppointmentsToday(id: any) {
     return this.http.get<Array<Appointment>>(`https://groupone-booking-app.herokuapp.com/api/appointments/barbAppointmentsToday/${id}`);
@@ -36,5 +42,9 @@ export class AppointmentService {
 
   getAllBarbers(){
     return this.http.get<Array<Appointment>>(`https://groupone-booking-app.herokuapp.com/api/barbers/`);
+  }
+
+  getOneAppointment(id: any){
+    return this.http.get<Appointment>(`https://groupone-booking-app.herokuapp.com/api/appointments/${id}`)
   }
 }
