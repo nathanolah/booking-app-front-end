@@ -32,10 +32,13 @@ export class AdminComponent implements OnInit {
       localStorage.setItem('access_token',success.token);
       this.route.navigate(['/home']);
     },
-    (err)=>
+    (err) => 
     {
       console.log(err);
-    }
+    } 
+
+    // Admin
+    // Tt123^^
 
     );
 

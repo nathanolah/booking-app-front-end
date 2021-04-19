@@ -39,6 +39,7 @@ import { ChangeProfileComponent } from './change-profile/change-profile.componen
 import { AccountProfileComponent } from './account-profile/account-profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { NewShopComponent } from './new-shop/new-shop.component';
+import { RemoveBarberShopComponent } from './remove-barber-shop/remove-barber-shop.component';
 
 
 
@@ -79,7 +80,8 @@ export function tokenGetter() {
     ChangeProfileComponent,
     AccountProfileComponent,
     AdminComponent,
-    NewShopComponent
+    NewShopComponent,
+    RemoveBarberShopComponent
     
   ],
   imports: [

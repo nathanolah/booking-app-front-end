@@ -25,6 +25,8 @@ import { CustomersComponent } from './customers/customers.component';
 import { AccountProfileComponent } from './account-profile/account-profile.component';
 import { ChangeProfileComponent } from './change-profile/change-profile.component';
 import { AdminComponent } from './admin/admin.component';
+import { NewShopComponent } from './new-shop/new-shop.component';
+import { RemoveBarberShopComponent } from './remove-barber-shop/remove-barber-shop.component';
 
 const routes: Routes = [
   {path: "signup", component: SignupComponent},
@@ -50,6 +52,8 @@ const routes: Routes = [
   {path: 'admin', component:AdminComponent},
   {path: 'accountProfile/:id', component:AccountProfileComponent},
   {path: 'changeProfile/:id', component:ChangeProfileComponent},
+  { path: 'addBarberShop', component: NewShopComponent },
+  { path: 'removeBarberShop', component: RemoveBarberShopComponent },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent }
 ];
