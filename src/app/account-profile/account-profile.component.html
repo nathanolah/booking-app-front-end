@@ -27,6 +27,7 @@
 
     <div class="button">
         <p (click)="change($event,cust._id)">Change your profile</p>
+        <a [routerLink]="['/customerAppointments', token._id]" class="btn btn-outline-primary">View Your Appointments</a>
     </div>
 
 
