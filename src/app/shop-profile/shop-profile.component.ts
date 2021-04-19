@@ -35,22 +35,21 @@ export class ShopProfileComponent implements OnInit {
       var add=this.address.split(" ");
       //this.newAdd=add.toString();
       var addressnew;
-      if(add.length == 3)
-      {
-        addressnew= `https://maps.google.com/maps?q=${add[0]}%20${add[1]}%20${add[2]}&t=&z=15&ie=UTF8&iwloc=&output=embed`
-      }
-      else{
-        addressnew= `https://maps.google.com/maps?q=${add[0]}%20${add[1]}%20${add[2]}%20${add[3]}&t=&z=15&ie=UTF8&iwloc=&output=embed`
-      }
+     
+      addressnew= `https://maps.google.com/maps?q=${add}&t=&z=15&ie=UTF8&iwloc=&output=embed`
+    
+     
+      
       this.doc.getElementById('gmap_canvas').setAttribute('src', addressnew);
-      console.log(this.barbers);
+       this.token=this.auth.readToken();
+    
+       if(this.token.role=="Manager" && this.token._id == this.shop.manager)
+       {
+        this.isManager=true;
+        }
     })
 
-    this.token=this.auth.readToken();
-    if(this.token.role=="Manager")
-    {
-      this.isManager=true;
-    }
+   
   }
 
   rowClicked(e,id)

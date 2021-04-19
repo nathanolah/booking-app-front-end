@@ -45,4 +45,7 @@ export class AuthService {
     //return this.http.post<any>('http://localhost:8080/api/customers/login', customer);
     return this.http.post<any>('https://groupone-booking-app.herokuapp.com/api/barbers/login', bar);
   }
+  loginAdmin(data: any):Observable<any>{
+    return this.http.post<any>('https://lit-bastion-23590.herokuapp.com/admin', data);
+  }
 }
