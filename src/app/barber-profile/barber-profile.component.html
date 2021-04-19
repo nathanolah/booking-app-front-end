@@ -13,6 +13,7 @@
                       <div (click)="clicked($event, barber._id)" class="btn btn-outline-primary">New Review</div>   
                       <a [routerLink]="['/appointment-form', barber._id]" class="btn btn-outline-primary">Book an Appointment</a>
                       <a [routerLink]="['/todayBarberAppointments', barber._id]" class="btn btn-outline-primary" *ngIf="token.email == barber.email || isManager">View Days Appointments</a>                       
+
                     </div>
                   </div>
                 </div>

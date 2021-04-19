@@ -12,17 +12,16 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ShopProfileComponent } from './shop-profile/shop-profile.component';
 import { NewReviewComponent } from './new-review/new-review.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
 import { BarberProfileComponent } from './barber-profile/barber-profile.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { AboutComponent } from './about/about.component';
+
 import { FormsModule } from "@angular/forms";
 import { JwtModule } from "@auth0/angular-jwt";
-import { ChangeProfileComponent } from './change-profile/change-profile.component';
-import { AccountProfileComponent } from './account-profile/account-profile.component';
+
 
 import { InterceptTokenService } from './intercept-token.service';
 import { LoginBarberComponent } from './login-barber/login-barber.component';
@@ -36,9 +35,17 @@ import { CustomersComponent } from './customers/customers.component';
 
 import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { PagingComponent } from './paging/paging.component';
+
 import { AppointmentsForDayComponent } from './appointments-for-day/appointments-for-day.component';
 import { CustomerAppointmentsComponent } from './customer-appointments/customer-appointments.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+
+import { ChangeProfileComponent } from './change-profile/change-profile.component';
+import { AccountProfileComponent } from './account-profile/account-profile.component';
+import { AdminComponent } from './admin/admin.component';
+import { NewShopComponent } from './new-shop/new-shop.component';
+import { RemoveBarberShopComponent } from './remove-barber-shop/remove-barber-shop.component';
+
 
 
 
@@ -60,7 +67,6 @@ export function tokenGetter() {
     LoginComponent,
     RegisterComponent,
     PageNotFoundComponent,
-    ProfilePageComponent,
     ShopProfileComponent,
     NewReviewComponent,
     CustomersComponent,
@@ -77,22 +83,25 @@ export function tokenGetter() {
     AppointmentConfirmationComponent,
     WaitingListComponent,
     PagingComponent,
-
     ChangeProfileComponent,
     AccountProfileComponent,
 
     AppointmentsForDayComponent,
-
     CustomerAppointmentsComponent,
-
     AppointmentComponent
 
+
+    AdminComponent,
+    NewShopComponent,
+    RemoveBarberShopComponent
+    
   ],
   imports: [
     HttpClientModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
