@@ -88,7 +88,7 @@ export function tokenGetter() {
 
     AppointmentsForDayComponent,
     CustomerAppointmentsComponent,
-    AppointmentComponent
+    AppointmentComponent,
 
 
     AdminComponent,
