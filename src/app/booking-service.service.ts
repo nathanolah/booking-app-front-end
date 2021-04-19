@@ -100,7 +100,7 @@ export class BookingServiceService {
   }
 
   //barbershop
-
+  
   getBarberShops():Observable<BarberShop[]>{
     return this.http.get<BarberShop[]>(`https://groupone-booking-app.herokuapp.com/api/barberShops`)
   }
@@ -111,6 +111,14 @@ export class BookingServiceService {
 
   getBarberShopsPage(page: any): Observable<BarberShop[]> {
     return this.http.get<BarberShop[]>(`https://groupone-booking-app.herokuapp.com/api/barberShops?page=${page}&perPage=${6}`);
+  }
+
+  addBarberShop(data: any): Observable<any> {
+    return this.http.post<any>(`https://groupone-booking-app.herokuapp.com/api/barberShops`, data);
+  }
+
+  removeBarberShop(id: string): Observable<any> {
+    return this.http.delete(`https://groupone-booking-app.herokuapp.com/api/barberShops/${id}`);
   }
 
   /* Barber shop Waiting list */

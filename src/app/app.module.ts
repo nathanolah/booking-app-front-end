@@ -33,11 +33,20 @@ import { CustomersComponent } from './customers/customers.component';
 
 import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { PagingComponent } from './paging/paging.component';
+
+import { AppointmentsForDayComponent } from './appointments-for-day/appointments-for-day.component';
+import { CustomerAppointmentsComponent } from './customer-appointments/customer-appointments.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+
 import { ChangeProfileComponent } from './change-profile/change-profile.component';
 import { AccountProfileComponent } from './account-profile/account-profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { NewShopComponent } from './new-shop/new-shop.component';
+
 import { AddScheduleComponent } from './add-schedule/add-schedule.component';
+
+import { RemoveBarberShopComponent } from './remove-barber-shop/remove-barber-shop.component';
+
 
 
 
@@ -76,12 +85,19 @@ export function tokenGetter() {
     PagingComponent,
     ChangeProfileComponent,
     AccountProfileComponent,
-    AdminComponent,
 
+    AppointmentsForDayComponent,
+    CustomerAppointmentsComponent,
+    AppointmentComponent,
+
+
+    AdminComponent,
    
     AddScheduleComponent,
 
-    NewShopComponent
+    NewShopComponent,
+    RemoveBarberShopComponent
+
     
   ],
   imports: [

@@ -14,15 +14,17 @@ export class HeaderComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private doc:Document, private router: Router,private auth:AuthService) { }
 
   ngOnInit(): void {
-    this.router.events.subscribe((event:Event)=>
-    {
-      if( event instanceof NavigationStart)
-      {
+    
+    this.router.events.subscribe((event:Event) => {
+
+      if (event instanceof NavigationStart) {
         this.token=this.auth.readToken();
       }
 
       console.log(this.token);
-    })
+
+    });
+
   }
 
   logout(e):void{

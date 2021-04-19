@@ -1,8 +1,23 @@
 <div class="container">
   <div class="title">
-      <strong>Available Shops</strong>
+    <strong>Available Shops</strong>
   </div>
   <br>
+
+  <!-- Admin Features -->
+  <div class="row" *ngIf="isAdmin">
+    <div class="col">
+      <button type="button" class="btn btn-light"><a routerLink="/addBarberShop" class="nav-link" routerLinkActive="active">Add Barber Shop</a></button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-light"><a routerLink="/removeBarberShop" class="nav-link" routerLinkActive="active">Remove Barber Shop</a></button>
+    </div>
+    <div class="col-md">
+    </div>
+  </div>
+
+  <br>
+
   <div class="card" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
       <div class="row">
         <div class="col">
@@ -27,5 +42,8 @@
     <!-- <div class="w-100"><app-paging (newPage)="getPage($event)" [page]="page"></app-paging></div> -->
     <br>
   </div>
+
   <br>
+
 </div>
+
