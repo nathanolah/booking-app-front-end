@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   page: number = 1;
   querySub: any;
   public token: any;
+  isAdmin: boolean;
 
   constructor (
     private book: BookingServiceService,
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // Query specific amount of shops for the list
     // this.querySub = this.route.queryParams.subscribe(params => {
     //   this.getPage(+params['page'] || 1);
     // });
@@ -33,18 +35,13 @@ export class HomeComponent implements OnInit {
       this.shops = data;
       this.token = this.auth.readToken();
 
-  
-      console.log("shops new :" + this.shops)
-      //console.log("role : " + (this.token.role != "") ? "admin" : "no admin") 
-
-      for (let i = 0; i < this.shops.length; i++) {
-        console.log(this.shops[i].barberShopName);
+      // Check if admin logged in
+      if (this.token.role == "Admin") {
+        this.isAdmin = true;
+        console.log(this.isAdmin)
       }
 
     });
-    
-
-
   }
 
   getPage(num: any) {
