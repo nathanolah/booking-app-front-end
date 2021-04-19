@@ -30,6 +30,10 @@ export class BookingServiceService {
   {
     return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/barbers/${id}`, data);
   }
+  
+  updateManager(shop,id, manager:any):Observable<any> {
+    return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/barbers/${shop}/${id}/${manager}`, null);
+  }
 
   getBarber(id):Observable<Barber>
   {
@@ -40,6 +44,10 @@ export class BookingServiceService {
   //schedule
   getSchedule(id):Observable<Schedule>{
     return this.http.get<Schedule>(`https://groupone-booking-app.herokuapp.com/api/schedules/${id}`);
+  }
+  
+  addSchedule(data:any, id):Observable<any>{
+    return this.http.post<any>(`https://groupone-booking-app.herokuapp.com/api/schedules/${id}`, data);
   }
 
   updateSchedule(id, data:any):Observable<any>
