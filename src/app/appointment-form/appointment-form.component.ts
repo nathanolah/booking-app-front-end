@@ -48,7 +48,9 @@ export class AppointmentFormComponent implements OnInit {
 
  }
 
- public getAvailableTimes():void{this.querySub = this.route.params.subscribe(params => {
+ public getAvailableTimes():void{
+   this.availableTimes = [];
+  this.querySub = this.route.params.subscribe(params => {
   this.data.getBarberAppointmentsTargetDay(params['id'], this.year, this.month, this.day).subscribe(data => {        
     
       this.appointmentsForDay = data;
