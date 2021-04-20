@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+      
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <br>
+            <strong>Add Schedule</strong>
+            <br><br>
+          </div>
+  
+          <!-- Create an error message box  -->
+          <div class="errorMessage">
+            
+          </div>
+      
+          <!-- Register Form -->
+          <div class="col-md-4">
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="form-group">
+              <label class="control-label" for="name">Day:</label>
+              <input type="number" class="form-control" id="workingday" name="workingday" [(ngModel)]="workingday" >
+  
+            </div>
+  
+            <div class="form-group">
+              <label class="control-label" for="name">Start:</label>
+              <input type="text" class="form-control" id="starting" name="starting" [(ngModel)]="starting" >
+  
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="name">End:</label>
+              <input type="text" class="form-control" id="end" name="end" [(ngModel)]="end">
+  
+            </div>
+  
+           
+            <div class="alert alert-danger" *ngIf="warning">
+              {{warning}}
+            </div>
+            <br>
+            <button class="btn btn-primary pull-right" type="submit">Submit</button>
+          </form>
+        </div>
+      
+          <!-- Form footer -->
+          <div id="formFooter">
+          </div>
+      
+        </div>
+      </div>
+  </div>

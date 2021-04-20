@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {SignupComponent} from './signup/signup.component';
-import {BookComponent} from './book/book.component';
 import { BarberListComponent } from './barber-list/barber-list.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -30,43 +29,70 @@ import {CustomerAppointmentsComponent} from './customer-appointments/customer-ap
 import {AppointmentComponent} from './appointment/appointment.component';
 
 import { AdminComponent } from './admin/admin.component';
+
+import { AddScheduleComponent } from './add-schedule/add-schedule.component';
+import { GuardAdminService } from './guard-admin.service';
+import { GuardManagerService } from './guard-manager.service';
+
 import { NewShopComponent } from './new-shop/new-shop.component';
 import { RemoveBarberShopComponent } from './remove-barber-shop/remove-barber-shop.component';
 
 
 const routes: Routes = [
   {path: "signup", component: SignupComponent},
-  {path: "book", component: BookComponent},
   {path: "about", component: AboutComponent},
   {path: "barlist", component: BarberListComponent},
   {path: "home", component: HomeComponent},
   {path: "login", component: LoginComponent },
   {path: "login-barber",component:LoginBarberComponent},
-  { path: 'customer/:id', component: CustomersComponent },
+  { path: 'customer/:id', component: CustomersComponent, canActivate:[GuardAuthService] },
   {path: "register", component: RegisterComponent },
   { path: 'customers-list', component: CustomersListComponent},
   { path: 'appointment/:id', component: AppointmentComponent},
   {path: "shopProfile/:id", component: ShopProfileComponent},
   {path: "newReview/:id", component:NewReviewComponent, canActivate:[GuardAuthService]},
-  {path: "reviews-list", component:ReviewListComponent, canActivate:[GuardAuthService]},
+  {path: "reviews-list", component:ReviewListComponent, canActivate:[GuardAdminService]},
   { path: 'appointment-list', component: AppointmentListComponent},
-  {path: "barProf/:id", component:BarberProfileComponent},
+
+  
+  // From SMKMS4 vvv 
+  
+  {path: "barProf/:shop/:id", component:BarberProfileComponent},
   {path: "appointment-form/:id", component:AppointmentFormComponent, canActivate:[GuardAuthService]},
   { path: 'appointment-confirmation/:id', component: AppointmentConfirmationComponent},
-  {path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardAuthService]},
-  {path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
+  {path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardManagerService]},
+  {path: "editSchedule/:shop/:id",component:EditScheduleComponent, canActivate:[GuardManagerService]},
+    
+  //{ path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
+    
+  {path: 'admin', component:AdminComponent},
+  {path: 'addSchedule/:shop/:id', component:AddScheduleComponent,canActivate:[GuardManagerService]},
+  {path: 'accountProfile/:id', component:AccountProfileComponent},
+  {path: 'changeProfile/:id', component:ChangeProfileComponent,canActivate:[GuardAuthService]},
+   
+    
+  ///////////////////////////////////////////////////////
+  // From old Master vvv
+  
+  //{path: "barProf/:id", component:BarberProfileComponent},
+  //{path: "appointment-form/:id", component:AppointmentFormComponent, canActivate:[GuardAuthService]},
+  //{ path: 'appointment-confirmation/:id', component: AppointmentConfirmationComponent},
+  //{path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardAuthService]},
+  //{path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
 
   { path: 'barberAppointments/:id', component: AppointmentByBarberComponent, canActivate:[GuardAuthService]},
   
-  { path: 'accountProfile/:id', component:AccountProfileComponent},
-  { path: 'changeProfile/:id', component:ChangeProfileComponent},
+  //{ path: 'accountProfile/:id', component:AccountProfileComponent},
+  //{ path: 'changeProfile/:id', component:ChangeProfileComponent},
+  
   { path: 'todayBarberAppointments/:id', component: AppointmentsForDayComponent},
   { path: 'customerAppointments/:id', component: CustomerAppointmentsComponent, canActivate:[GuardAuthService]},
-
   { path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
-  { path: 'admin', component:AdminComponent},
-  { path: 'accountProfile/:id', component:AccountProfileComponent },
-  { path: 'changeProfile/:id', component:ChangeProfileComponent },
+  
+  //{ path: 'admin', component:AdminComponent}, 
+  //{ path: 'accountProfile/:id', component:AccountProfileComponent },
+  //{ path: 'changeProfile/:id', component:ChangeProfileComponent },
+  
   { path: 'addBarberShop', component: NewShopComponent },
   { path: 'removeBarberShop', component: RemoveBarberShopComponent },
   
