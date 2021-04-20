@@ -63,14 +63,12 @@ const routes: Routes = [
   {path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardManagerService]},
   {path: "editSchedule/:shop/:id",component:EditScheduleComponent, canActivate:[GuardManagerService]},
     
-  //{ path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
-    
   {path: 'admin', component:AdminComponent},
   {path: 'addSchedule/:shop/:id', component:AddScheduleComponent,canActivate:[GuardManagerService]},
   {path: 'accountProfile/:id', component:AccountProfileComponent},
   {path: 'changeProfile/:id', component:ChangeProfileComponent,canActivate:[GuardAuthService]},
    
-    
+  
   ///////////////////////////////////////////////////////
   // From old Master vvv
   
@@ -81,22 +79,14 @@ const routes: Routes = [
   //{path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
 
   { path: 'barberAppointments/:id', component: AppointmentByBarberComponent, canActivate:[GuardAuthService]},
-  
-  //{ path: 'accountProfile/:id', component:AccountProfileComponent},
-  //{ path: 'changeProfile/:id', component:ChangeProfileComponent},
-  
   { path: 'todayBarberAppointments/:id', component: AppointmentsForDayComponent},
   { path: 'customerAppointments/:id', component: CustomerAppointmentsComponent, canActivate:[GuardAuthService]},
-  { path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
-  
-  //{ path: 'admin', component:AdminComponent}, 
-  //{ path: 'accountProfile/:id', component:AccountProfileComponent },
-  //{ path: 'changeProfile/:id', component:ChangeProfileComponent },
-  
-  { path: 'addBarberShop', component: NewShopComponent },
-  { path: 'removeBarberShop', component: RemoveBarberShopComponent },
-  
 
+  //{ path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
+  
+  { path: 'addBarberShop', component: NewShopComponent, canActivate:[GuardAdminService] },
+  { path: 'removeBarberShop', component: RemoveBarberShopComponent, canActivate:[GuardAdminService] },
+  
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent }
 ];

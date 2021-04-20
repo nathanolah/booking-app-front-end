@@ -17,6 +17,7 @@ export class ShopProfileComponent implements OnInit {
   shop: BarberShop;
   barbers: Array<Barber>
   isManager: boolean;
+  isAdmin: boolean;
   public address: String;
   public newAdd: string;
   constructor(@Inject(DOCUMENT) private doc: Document, private auth: AuthService, private book: BookingServiceService, private route: Router, private aroute: ActivatedRoute) { }
@@ -46,6 +47,11 @@ export class ShopProfileComponent implements OnInit {
       if (this.token.role == "Manager" && this.token._id == this.shop.manager) {
         this.isManager = true;
       }
+
+      if (this.token.role == "Admin") {
+        this.isAdmin = true;
+      }
+
     })
 
 
