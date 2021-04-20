@@ -50,6 +50,10 @@ export class ShopProfileComponent implements OnInit {
       if (this.token.role == "Manager" && this.token._id == this.shop.manager) {
         this.isManager = true;
       }
+      if (this.token.role =="Admin")
+      {
+        this.isAdmin =true;
+      }
     })
 
 
