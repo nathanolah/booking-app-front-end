@@ -12,6 +12,7 @@ import { BarberShop } from './BarberShop';
   providedIn: 'root'
 })
 export class BookingServiceService {
+ 
 
   constructor(private http: HttpClient) {}
 
@@ -20,7 +21,11 @@ export class BookingServiceService {
 
     return this.http.post<any>(`https://groupone-booking-app.herokuapp.com/api/barbers/${id}`, data);
   }
+  deleteBarber(id: any, shop: any):Observable<any> {
 
+    return this.http.delete<any>(`https://lit-bastion-23590.herokuapp.com/api/barbers/${id}/${shop}`);
+    
+  }
   getBarbers(): Observable<Barber[]>
   { 
     return this.http.get<Barber[]>(`https://groupone-booking-app.herokuapp.com/api/barbers`)
@@ -29,6 +34,10 @@ export class BookingServiceService {
   updateBarber(id, data:Barber):Observable<any>
   {
     return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/barbers/${id}`, data);
+  }
+  
+  updateManager(shop,id, manager:any):Observable<any> {
+    return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/barbers/${shop}/${id}/${manager}`, null);
   }
 
   getBarber(id):Observable<Barber>
@@ -40,6 +49,10 @@ export class BookingServiceService {
   //schedule
   getSchedule(id):Observable<Schedule>{
     return this.http.get<Schedule>(`https://groupone-booking-app.herokuapp.com/api/schedules/${id}`);
+  }
+  
+  addSchedule(data:any, id):Observable<any>{
+    return this.http.post<any>(`https://groupone-booking-app.herokuapp.com/api/schedules/${id}`, data);
   }
 
   updateSchedule(id, data:any):Observable<any>
@@ -83,6 +96,10 @@ export class BookingServiceService {
     return this.http.delete<any>(`https://groupone-booking-app.herokuapp.com/api/reviews/${id}`);
   }
 
+  getReviewsByAuthor(id: any):Observable<Review[]> {
+    return this.http.get<Review[]>(`https://lit-bastion-23590.herokuapp.com/api/reviews/author/${id}`);
+  }
+  
   //customer
   addCustomer(data: any):Observable<any>
   {
@@ -98,9 +115,12 @@ export class BookingServiceService {
   {
     return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/customers/${id}`, newC);
   }
-
+  deleteCustomer(id: any):Observable<any> {
+    return this.http.delete<any>(`https://lit-bastion-23590.herokuapp.com/api/customers/${id}`)
+  }
+  
   //barbershop
-
+  
   getBarberShops():Observable<BarberShop[]>{
     return this.http.get<BarberShop[]>(`https://groupone-booking-app.herokuapp.com/api/barberShops`)
   }
@@ -111,6 +131,14 @@ export class BookingServiceService {
 
   getBarberShopsPage(page: any): Observable<BarberShop[]> {
     return this.http.get<BarberShop[]>(`https://groupone-booking-app.herokuapp.com/api/barberShops?page=${page}&perPage=${6}`);
+  }
+
+  addBarberShop(data: any): Observable<any> {
+    return this.http.post<any>(`https://groupone-booking-app.herokuapp.com/api/barberShops`, data);
+  }
+
+  removeBarberShop(id: string): Observable<any> {
+    return this.http.delete(`https://groupone-booking-app.herokuapp.com/api/barberShops/${id}`);
   }
 
   /* Barber shop Waiting list */

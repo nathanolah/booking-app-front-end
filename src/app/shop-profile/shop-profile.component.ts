@@ -17,6 +17,7 @@ export class ShopProfileComponent implements OnInit {
   shop: BarberShop;
   barbers: Array<Barber>
   isManager: boolean;
+  isAdmin:boolean;
   public address: String;
   public newAdd: string;
   constructor(@Inject(DOCUMENT) private doc: Document, private auth: AuthService, private book: BookingServiceService, private route: Router, private aroute: ActivatedRoute) { }
@@ -42,7 +43,10 @@ export class ShopProfileComponent implements OnInit {
 
       this.doc.getElementById('gmap_canvas').setAttribute('src', addressnew);
       this.token = this.auth.readToken();
-
+      if(this.token.role=="Admin")
+      {
+        this.isAdmin=true;
+      }
       if (this.token.role == "Manager" && this.token._id == this.shop.manager) {
         this.isManager = true;
       }
@@ -82,4 +86,13 @@ export class ShopProfileComponent implements OnInit {
     }
   }
 
+  delete(e,id,shop)
+  {
+    this.book.deleteBarber(id,shop).subscribe(success=>{
+
+      alert(success);
+      this.doc.defaultView.location.reload();
+    })
+
+  }
 }

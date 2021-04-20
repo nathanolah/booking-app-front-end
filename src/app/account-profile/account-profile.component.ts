@@ -12,7 +12,7 @@ import { Customer } from '../Customer';
 })
 export class AccountProfileComponent implements OnInit {
   public token :any;
-
+  isCust:boolean;
   public cust :any;
   public bar = new Barber;
   public role :String;
@@ -20,9 +20,13 @@ export class AccountProfileComponent implements OnInit {
 
   ngOnInit(): void {
     
-        this.token=this.auth.readToken();
+    this.token=this.auth.readToken();
       
-
+    if(this.token.role == 'Admin')
+    {
+      alert('You are administrator');
+      this.route.navigate(['home']);
+    }
       
    
     var id = this.ar.snapshot.params['id'];
@@ -30,10 +34,11 @@ export class AccountProfileComponent implements OnInit {
     if(this.token.role=="Manager" || this.token.role=="Barber")
     {
       roleT =2;
-
+      this.isCust=false;
     }
     else{
       roleT=1;
+      this.isCust=true;
     }
     if(roleT==1)
     {
@@ -64,5 +69,18 @@ export class AccountProfileComponent implements OnInit {
   change(e,id)
   {
     this.route.navigate(["/changeProfile", id]);
+  }
+  delete(e,id)
+  {
+    this.book.deleteCustomer(id).subscribe(success=>{
+
+      alert(success);
+      this.auth.logout();
+      this.route.navigate(['home']);
+    })
+  }
+  reviews(e,id)
+  {
+    this.route.navigate(["review/",id]);
   }
 }

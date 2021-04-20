@@ -20,7 +20,20 @@ export class GuardAuthService implements CanActivate{
       this.router.navigate(['/login']);
       return false;
     }
-    return true;
+    else{
+      let token = this.auth.readToken();
+      if(token.role == "Customer"){
+        return true;
+      
+      }
+      else{
+        alert('You do not have access');
+
+        this.router.navigate(['home']);
+        return false;
+      }
+      
+    }
   }
 
  

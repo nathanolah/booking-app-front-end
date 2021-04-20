@@ -1,16 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { JwtHelperService } from '@auth0/angular-jwt';
 import {Customer} from './Customer';
 import { Barber } from './Barber';
+import { Router } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient,private jwtHelper:JwtHelperService) { }
+  constructor(@Inject(DOCUMENT) private doc : Document, private http: HttpClient,private jwtHelper:JwtHelperService, private route :Router) { }
 
   public getToken():string{
     return localStorage.getItem('access_token');
@@ -23,7 +25,7 @@ export class AuthService {
 
   logout():any{
     localStorage.removeItem('access_token');
-
+    this.route.navigate(['home']).then(res=> this.doc.location.reload())
   }
 
   isAuthenticated():boolean{

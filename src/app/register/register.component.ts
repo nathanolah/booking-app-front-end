@@ -48,6 +48,8 @@ export class RegisterComponent implements OnInit {
       this.phoneNumber="",
 
       alert(res);
+
+      this.router.navigate(['login']);
     })
 
   }
