@@ -46,10 +46,7 @@ import { NewShopComponent } from './new-shop/new-shop.component';
 import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 
 import { RemoveBarberShopComponent } from './remove-barber-shop/remove-barber-shop.component';
-<<<<<<< HEAD
 import { ReviewComponent } from './review/review.component';
-=======
->>>>>>> 961af60944148afdeafd22e117ed529500eeee8e
 
 
 
@@ -93,14 +90,9 @@ export function tokenGetter() {
     AppointmentsForDayComponent,
     CustomerAppointmentsComponent,
     AppointmentComponent,
-<<<<<<< HEAD
-    ReviewComponent,
-=======
-
->>>>>>> 961af60944148afdeafd22e117ed529500eeee8e
 
     AdminComponent,
-   
+    ReviewComponent,
     AddScheduleComponent,
 
     NewShopComponent,

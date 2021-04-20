@@ -36,10 +36,7 @@ export class BookingServiceService {
     return this.http.put<any>(`https://lit-bastion-23590.herokuapp.com/api/barbers/${id}`, data);
   }
 
-  updateManager(shop,id, manager:any):Observable<any>
-  {
-    return this.http.put<any>(`https://lit-bastion-23590.herokuapp.com/api/barbers/${shop}/${id}/${manager}`, null);
-  }
+
   
   updateManager(shop,id, manager:any):Observable<any> {
     return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/barbers/${shop}/${id}/${manager}`, null);
@@ -60,9 +57,7 @@ export class BookingServiceService {
     return this.http.post<any>(`https://groupone-booking-app.herokuapp.com/api/schedules/${id}`, data);
   }
 
-  addSchedule(data:any, id):Observable<any>{
-    return this.http.post<any>(`https://lit-bastion-23590.herokuapp.com/api/schedules/${id}`, data);
-  }
+ 
   updateSchedule(id, data:any):Observable<any>
   {
     return this.http.put<any>(`https://lit-bastion-23590.herokuapp.com/api/schedules/${id}`,data);
@@ -122,13 +117,6 @@ export class BookingServiceService {
   {
     return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/customers/${id}`, newC);
   }
-<<<<<<< HEAD
-  deleteCustomer(id: any):Observable<any> {
-    return this.http.delete<any>(`https://lit-bastion-23590.herokuapp.com/api/customers/${id}`)
-  }
-  
-=======
->>>>>>> 961af60944148afdeafd22e117ed529500eeee8e
   //barbershop
   
   getBarberShops():Observable<BarberShop[]>{

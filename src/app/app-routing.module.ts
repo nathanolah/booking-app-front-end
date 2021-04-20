@@ -36,10 +36,7 @@ import { GuardManagerService } from './guard-manager.service';
 
 import { NewShopComponent } from './new-shop/new-shop.component';
 import { RemoveBarberShopComponent } from './remove-barber-shop/remove-barber-shop.component';
-<<<<<<< HEAD
 import { ReviewComponent } from './review/review.component';
-=======
->>>>>>> 961af60944148afdeafd22e117ed529500eeee8e
 
 
 const routes: Routes = [
