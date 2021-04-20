@@ -15,7 +15,7 @@
             <tbody>
             <tr *ngFor="let apt of appointments" >
                 <td>{{apt.custID.firstName}} {{apt.custID.lastName}}</td>
-                <td></td>
+                <td>{{apt.barberID.firstName}} {{apt.barberID.lastName}}</td>
                 <td>{{apt.startDate | date:'short'}} - {{apt.endDate | date:'shortTime'}}</td>
             </tr>
             </tbody>
