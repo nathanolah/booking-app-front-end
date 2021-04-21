@@ -46,7 +46,7 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "login", component: LoginComponent },
   {path: "login-barber",component:LoginBarberComponent},
-  { path: 'customer/:id', component: CustomersComponent, canActivate:[GuardAuthService] },
+  { path: 'customer/:id', component: CustomersComponent, canActivate:[GuardAdminService] },
   {path: "register", component: RegisterComponent },
   { path: 'customers-list', component: CustomersListComponent},
   { path: 'appointment/:id', component: AppointmentComponent},
