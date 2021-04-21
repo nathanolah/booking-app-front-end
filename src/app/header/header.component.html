@@ -34,9 +34,9 @@
          
          <li class="nav-item" *ngIf="!(token)" routerLinkActive="active"><a routerLink="login" class="nav-link ">Login</a></li>
          <li class="nav-item" routerLinkActive="active"><a routerLink='/accountProfile/{{token._id}}' class="nav-link "><span *ngIf="token">My profile</span></a></li>
-         <li class="nav-item"><a class="nav-link" *ngIf="token">Welcome! {{token.firstName}} {{token.lastName}}</a></li>
+         <li class="nav-item"><a class="nav-link disable" *ngIf="token">Welcome! {{token.firstName}} {{token.lastName}}</a></li>
          <li class="nav-item" *ngIf="token"><a class="nav-link" (click)="logout($event)">Log out</a></li>
-         <li class="nav-item" *ngIf="token.role=='Admin'">ADMIN</li>
+         <!-- <li class="nav-item" *ngIf="token.role=='Admin'">ADMIN</li> -->
         </ul>
         
       </div>

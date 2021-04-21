@@ -25,8 +25,11 @@
     </div>
     <hr>
 
-    <div class="button">
-        <p (click)="change($event,cust._id)">Change your profile</p>
+    <div  *ngIf="isCust"  class="button">
+        <div class="btn btn-outline-primary" (click)="change($event,cust._id)">Change your profile</div>&nbsp;&nbsp;
+        <div class="btn btn-outline-primary" (click)="delete($event,cust._id)">Delete your account</div>&nbsp;&nbsp;
+        <div class="btn btn-outline-primary" (click)="reviews($event,cust._id)">View your reviews</div>&nbsp;&nbsp;
+
         <a [routerLink]="['/customerAppointments', token._id]" class="btn btn-outline-primary">View Your Appointments</a>
     </div>
 

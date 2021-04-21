@@ -51,7 +51,7 @@ export class NewReviewComponent implements OnInit {
     console.log(newRev.author);
     this.book.addReview(newRev, this.barber._id ).subscribe(res=>{
       alert(res);
-      this.router.navigate([`/barProf/${this.barber._id}`]);
+      this.router.navigate([`/review/${this.token._id}`]);
     });
   }
 }

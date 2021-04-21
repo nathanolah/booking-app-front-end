@@ -11,19 +11,32 @@ export class GuardAuthService implements CanActivate{
   constructor(private auth:AuthService, private router:Router) { }
 
 
-  canActivate():boolean{
+  canActivate():boolean {
 
-    if(!this.auth.isAuthenticated())
-    {
+    if(!this.auth.isAuthenticated()) {
       alert('You need to login first!');
       
       this.router.navigate(['/login']);
       return false;
     }
-    return true;
+    else {
+      let token = this.auth.readToken();
+
+      if(token.role == "Customer"){
+        return true;
+      }
+      else {
+        alert('You do not have access');
+
+        this.router.navigate(['home']);
+        return false;
+      }
+
+    }
+
   }
 
- 
-     
   
+
+
 }

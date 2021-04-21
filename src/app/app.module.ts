@@ -46,6 +46,7 @@ import { NewShopComponent } from './new-shop/new-shop.component';
 import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 
 import { RemoveBarberShopComponent } from './remove-barber-shop/remove-barber-shop.component';
+import { ReviewComponent } from './review/review.component';
 
 
 
@@ -92,7 +93,7 @@ export function tokenGetter() {
 
 
     AdminComponent,
-   
+    ReviewComponent,
     AddScheduleComponent,
 
     NewShopComponent,

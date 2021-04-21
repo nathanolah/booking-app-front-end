@@ -21,6 +21,10 @@ export class BookingServiceService {
     return this.http.post<any>(`https://groupone-booking-app.herokuapp.com/api/barbers/${id}`, data);
   }
 
+  deleteBarber(id: any, shop: any):Observable<any> {
+    return this.http.delete<any>(`https://groupone-booking-app.herokuapp.com/api/barbers/${id}/${shop}`);
+  }
+
   getBarbers(): Observable<Barber[]>
   { 
     return this.http.get<Barber[]>(`https://groupone-booking-app.herokuapp.com/api/barbers`)
@@ -67,28 +71,27 @@ export class BookingServiceService {
     return this.http.get<Review[]>(`https://groupone-booking-app.herokuapp.com/api/reviews`);
   }
 
-  getReviewByID( id): Observable<Review> //not sure needed.
-   {
+  getReviewByID(id): Observable<Review> //not sure needed. 
+  {
       return this.http.get<Review>(`https://groupone-booking-app.herokuapp.com/api/reviews/${id}`);
 
-   }
+  }
 
 
-  addReview(data: any, id: any):Observable<any>
-  {
+  addReview(data: any, id: any):Observable<any> {
      return this.http.post<any>(`https://groupone-booking-app.herokuapp.com/api/reviews/${id}`, data);
   }
 
-  updateReview(id , data:any):Observable<any>
-  {
-
+  updateReview(id , data:any):Observable<any> {
     return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/reviews/${id}`,data);
   }
 
-  deleteReview(id):Observable<any>
-  {
-
+  deleteReview(id):Observable<any> {
     return this.http.delete<any>(`https://groupone-booking-app.herokuapp.com/api/reviews/${id}`);
+  }
+
+  getReviewsByAuthor(id: any):Observable<Review[]> {
+    return this.http.get<Review[]>(`https://groupone-booking-app.herokuapp.com/api/reviews/author/${id}`);
   }
 
   //customer
@@ -105,6 +108,10 @@ export class BookingServiceService {
   updateCustomer(id, newC: any):Observable<any>
   {
     return this.http.put<any>(`https://groupone-booking-app.herokuapp.com/api/customers/${id}`, newC);
+  }
+
+  deleteCustomer(id): Observable<any> {
+    return this.http.delete(`https://groupone-booking-app.herokuapp.com/api/customers/${id}`);
   }
 
   //barbershop
