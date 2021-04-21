@@ -30,6 +30,6 @@ export class HeaderComponent implements OnInit {
   logout(e):void{
     console.log("clicked log out")
     this.auth.logout();
-    this.doc.defaultView.location.reload();
+    //this.doc.defaultView.location.reload();
   }
 }

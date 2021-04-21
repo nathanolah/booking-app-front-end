@@ -88,4 +88,14 @@ export class ShopProfileComponent implements OnInit {
     }
   }
 
+  delete(e,id,shop)
+  {
+    this.book.deleteBarber(id,shop).subscribe(success=>{
+
+      alert(success);
+      this.doc.defaultView.location.reload();
+    })
+
+  }
+
 }

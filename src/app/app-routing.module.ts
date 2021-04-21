@@ -36,6 +36,7 @@ import { GuardManagerService } from './guard-manager.service';
 
 import { NewShopComponent } from './new-shop/new-shop.component';
 import { RemoveBarberShopComponent } from './remove-barber-shop/remove-barber-shop.component';
+import { ReviewComponent } from './review/review.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,7 @@ const routes: Routes = [
   {path: "shopProfile/:id", component: ShopProfileComponent},
   {path: "newReview/:id", component:NewReviewComponent, canActivate:[GuardAuthService]},
   {path: "reviews-list", component:ReviewListComponent, canActivate:[GuardAdminService]},
+  {path: "review/:id", component:ReviewComponent, canActivate:[GuardAuthService]},
   { path: 'appointment-list', component: AppointmentListComponent},
 
   
@@ -68,7 +70,7 @@ const routes: Routes = [
   {path: 'accountProfile/:id', component:AccountProfileComponent},
   {path: 'changeProfile/:id', component:ChangeProfileComponent,canActivate:[GuardAuthService]},
    
-  
+
   ///////////////////////////////////////////////////////
   // From old Master vvv
   
