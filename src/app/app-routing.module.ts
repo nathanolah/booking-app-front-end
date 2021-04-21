@@ -81,9 +81,9 @@ const routes: Routes = [
   //{path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardAuthService]},
   //{path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
 
-  { path: 'barberAppointments/:id', component: AppointmentByBarberComponent, canActivate:[GuardAuthService]},
+  { path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
   { path: 'todayBarberAppointments/:id', component: AppointmentsForDayComponent},
-  { path: 'customerAppointments/:id', component: CustomerAppointmentsComponent, canActivate:[GuardAuthService]},
+  { path: 'customerAppointments/:id', component: CustomerAppointmentsComponent},
 
   //{ path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
   

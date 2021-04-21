@@ -24,7 +24,7 @@ export class BarberProfileComponent implements OnInit {
       console.log(this.barber);
     })
     this.token=this.auth.readToken();
-    if(this.token.role=="Manager")
+    if(this.token.role=="Manager" || this.token.role =="Admin")
     {
       this.isManager=true;
     }
