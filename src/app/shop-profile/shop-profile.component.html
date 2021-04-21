@@ -56,7 +56,8 @@
                 <ng-template #thenBlock>Manager</ng-template>
                 <ng-template #elseBlock>Barber</ng-template>
               </td>
-              <td *ngIf="token.role=='Admin'">
+
+              <td *ngIf="isAdmin">
                 <div *ngIf="barber.isManager; then thenBlock else elseBlock"></div>
                 <ng-template #thenBlock><button (click)="disable($event, barber._id,shop._id)">Disable Manager</button></ng-template>
                 <ng-template #elseBlock><button (click)="enable($event, barber._id,shop._id)">Enable Manager</button></ng-template>
