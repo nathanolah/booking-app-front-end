@@ -2,8 +2,11 @@
     <div class="card-body">
       <h5 class="card-title">{{ customer.email }}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Customer Info</h6>
-      <p class="card-text">{{ customer.firstName }} {{ customer.lastName }}</p>            
+      <p class="card-text"><strong>Name:</strong> {{ customer.firstName }} {{ customer.lastName }}</p>
+      <p class="card-text"><strong>Phone Number:</strong>{{ customer.phoneNumber }}</p>            
       <br><br>
+      <a [routerLink]="['/customerAppointments', customer._id]" class="btn btn-outline-primary">View Customers Appointments</a>
+      
     </div>
 </div>
 

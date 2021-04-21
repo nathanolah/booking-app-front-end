@@ -63,12 +63,13 @@ const routes: Routes = [
   {path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardManagerService]},
   {path: "editSchedule/:shop/:id",component:EditScheduleComponent, canActivate:[GuardManagerService]},
     
+
   {path: 'admin', component:AdminComponent},
   {path: 'addSchedule/:shop/:id', component:AddScheduleComponent,canActivate:[GuardManagerService]},
   {path: 'accountProfile/:id', component:AccountProfileComponent},
   {path: 'changeProfile/:id', component:ChangeProfileComponent,canActivate:[GuardAuthService]},
    
-  
+
   ///////////////////////////////////////////////////////
   // From old Master vvv
   

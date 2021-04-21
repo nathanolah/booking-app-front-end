@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data } from '@angular/router';
+import { ActivatedRoute, Data, Router } from '@angular/router';
 import { CustomerService } from '../Services/customer.service';
 import { Customer } from '../models/Customer';
+
 
 
 @Component({
@@ -13,7 +14,7 @@ export class CustomersListComponent implements OnInit {
 
   customers: Array<Customer> | undefined;
 
-  constructor(private data: CustomerService, private route: ActivatedRoute) {}
+  constructor(private data: CustomerService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -21,6 +22,11 @@ export class CustomersListComponent implements OnInit {
       this.customers = data;
     });
 
+  }
+
+  rowClicked(e,id)
+  {
+    this.router.navigate(["/customer", id])
   }
 
 }
