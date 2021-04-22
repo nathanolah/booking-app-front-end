@@ -79,8 +79,8 @@ const routes: Routes = [
   //{path: "appointment-form/:id", component:AppointmentFormComponent, canActivate:[GuardAuthService]},
   //{ path: 'appointment-confirmation/:id', component: AppointmentConfirmationComponent},
   //{path: "addBarber/:id", component:AddBarberComponent, canActivate:[GuardAuthService]},
-  //{path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
-
+  
+  { path: "editSchedule/:id",component:EditScheduleComponent, canActivate:[GuardAuthService]},
   { path: 'barberAppointments/:id', component: AppointmentByBarberComponent},
   { path: 'todayBarberAppointments/:id', component: AppointmentsForDayComponent},
   { path: 'customerAppointments/:id', component: CustomerAppointmentsComponent},
