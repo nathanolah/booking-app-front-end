@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Barber } from '../Barber';
+import { BarberShop } from '../BarberShop';
 import { BookingServiceService } from '../booking-service.service';
 
 @Component({
@@ -11,9 +13,10 @@ import { BookingServiceService } from '../booking-service.service';
 })
 export class BarberProfileComponent implements OnInit {
   isManager:boolean;
+  public shop: BarberShop;
   public barber:Barber;
   public token:any;
-  constructor(private book:BookingServiceService,private auth:AuthService, private route:Router, private aroute:ActivatedRoute) { }
+  constructor(@Inject(DOCUMENT) private doc:Document,  private book:BookingServiceService,private auth:AuthService, private route:Router, private aroute:ActivatedRoute) { }
 
   ngOnInit(): void {
     let id=this.aroute.snapshot.params['id'];
@@ -24,26 +27,38 @@ export class BarberProfileComponent implements OnInit {
       console.log(this.barber);
     })
     this.token=this.auth.readToken();
-    if(this.token.role=="Manager")
-    {
-      this.isManager=true;
-    }
+    let shop=this.aroute.snapshot.params['shop'];
+    this.book.getBarberShop(shop).subscribe(data=>{
+      if(this.token.role=="Manager" && (this.token._id == data.manager))
+      {
+        this.isManager=true;
+      }
+      this.shop =data;
+    })
+    
   }
   clicked(e,id)
   {
     this.route.navigate(["/newReview", id])
   }
 
-  updateSchedule(e,id)
+  updateSchedule(e,shop,id)
   {
     
-    this.route.navigate(['/editSchedule', id]);
+    this.route.navigate(['/editSchedule', shop, id]);
   }
   
   deleteSchedule(e,id)
   {
     this.book.deleteSchedule(id).subscribe(res=>{
       alert(res);
+      this.doc.defaultView.location.reload();
     })
+
+  }
+
+  newSchedule(e,shop,id)
+  {
+    this.route.navigate(['/addSchedule', shop,id])
   }
 }

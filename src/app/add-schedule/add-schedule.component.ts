@@ -16,7 +16,7 @@ export class AddScheduleComponent implements OnInit {
   public end:String;
   public warning:String;
   public barber:Barber;
-
+  
   constructor(private book:BookingServiceService, private route:Router, private aroute:ActivatedRoute) { }
 
   ngOnInit(): void {
